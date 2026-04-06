@@ -6,27 +6,27 @@
   <title>Décio Coelho | Viracopos Global</title>
   <meta
     name="description"
-    content="Décio Coelho • Viracopos Global • Centro de Inteligência Profissional Digital • Estado Maior Presidencial • presença executiva, autoridade institucional e posicionamento premium."
+    content="Décio Coelho • Viracopos Global • Centro de Inteligência Profissional Digital • Casa Civil Executiva Suprema • presença institucional, coordenação estratégica e posicionamento premium."
   />
 
   <style>
     :root{
       --bg:#03050a;
-      --bg-2:#07122a;
+      --bg2:#071329;
       --panel:rgba(255,255,255,.045);
-      --panel-2:rgba(255,255,255,.06);
+      --panel-strong:rgba(255,255,255,.065);
       --line:rgba(255,255,255,.08);
       --text:#f7f8fc;
-      --muted:#bcc7de;
-      --muted-2:#dde4f2;
-      --gold:#d6b360;
-      --gold-soft:#f4e1a2;
+      --muted:#b9c5de;
+      --muted-2:#dde6f4;
+      --gold:#d7b866;
+      --gold-soft:#f6e5aa;
+      --blue:#1d3f92;
       --green:#25D366;
-      --green-deep:#169448;
-      --wine:#5b180e;
-      --wine-2:#7c2413;
-      --blue:#1f47aa;
-      --shadow:0 28px 80px rgba(0,0,0,.42);
+      --green-deep:#169548;
+      --wine:#64170f;
+      --wine-deep:#48110c;
+      --shadow:0 28px 80px rgba(0,0,0,.45);
       --radius:34px;
       --max:1240px;
     }
@@ -39,9 +39,9 @@
       font-family:Inter, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 8% 8%, rgba(214,179,96,.14), transparent 22%),
-        radial-gradient(circle at 92% 12%, rgba(31,71,170,.22), transparent 24%),
-        radial-gradient(circle at 85% 90%, rgba(37,211,102,.08), transparent 18%),
+        radial-gradient(circle at 10% 10%, rgba(215,184,102,.14), transparent 22%),
+        radial-gradient(circle at 92% 12%, rgba(29,63,146,.22), transparent 24%),
+        radial-gradient(circle at 88% 92%, rgba(37,211,102,.08), transparent 18%),
         linear-gradient(180deg,#020309 0%, #061127 42%, #02040a 100%);
       overflow-x:hidden;
     }
@@ -50,9 +50,8 @@
       content:"";
       position:fixed;
       inset:0;
-      z-index:0;
       pointer-events:none;
-      opacity:.14;
+      opacity:.12;
       background:
         repeating-linear-gradient(
           to bottom,
@@ -61,48 +60,32 @@
           transparent 2px,
           transparent 4px
         );
+      z-index:0;
     }
 
     .bgfx{
       position:fixed;
       inset:0;
-      z-index:0;
       pointer-events:none;
       overflow:hidden;
+      z-index:0;
     }
 
     .orb{
       position:absolute;
       border-radius:50%;
-      filter:blur(110px);
+      filter:blur(120px);
       opacity:.15;
       animation:floaty 16s ease-in-out infinite;
     }
 
-    .orb.o1{
-      width:320px;height:320px;
-      left:-90px;top:-70px;
-      background:rgba(214,179,96,.9);
-    }
-
-    .orb.o2{
-      width:380px;height:380px;
-      right:-120px;top:20px;
-      background:rgba(31,71,170,.95);
-      animation-delay:-5s;
-    }
-
-    .orb.o3{
-      width:280px;height:280px;
-      right:15%;bottom:-90px;
-      background:rgba(37,211,102,.45);
-      opacity:.08;
-      animation-delay:-9s;
-    }
+    .o1{width:330px;height:330px;left:-90px;top:-70px;background:rgba(215,184,102,.95)}
+    .o2{width:390px;height:390px;right:-120px;top:30px;background:rgba(29,63,146,.98);animation-delay:-5s}
+    .o3{width:280px;height:280px;right:14%;bottom:-80px;background:rgba(37,211,102,.5);opacity:.08;animation-delay:-9s}
 
     @keyframes floaty{
       0%,100%{transform:translate(0,0) scale(1)}
-      50%{transform:translate(12px,16px) scale(1.05)}
+      50%{transform:translate(12px,15px) scale(1.05)}
     }
 
     .container{
@@ -115,9 +98,9 @@
     .topbar{
       position:sticky;
       top:0;
-      z-index:95;
+      z-index:99;
       backdrop-filter:blur(18px);
-      background:rgba(4,8,18,.78);
+      background:rgba(5,9,19,.78);
       border-bottom:1px solid rgba(255,255,255,.05);
     }
 
@@ -179,12 +162,12 @@
       padding:1px;
       background:
         linear-gradient(145deg,
-          rgba(214,179,96,.28),
+          rgba(215,184,102,.28),
           rgba(255,255,255,.05) 24%,
-          rgba(31,71,170,.18) 78%,
+          rgba(29,63,146,.18) 78%,
           rgba(255,255,255,.02)
         );
-      box-shadow:0 34px 95px rgba(0,0,0,.46);
+      box-shadow:0 34px 96px rgba(0,0,0,.48);
     }
 
     .panel{
@@ -192,8 +175,8 @@
       overflow:hidden;
       border-radius:43px;
       background:
-        radial-gradient(circle at 10% 10%, rgba(214,179,96,.08), transparent 20%),
-        radial-gradient(circle at 92% 18%, rgba(31,71,170,.18), transparent 24%),
+        radial-gradient(circle at 10% 10%, rgba(215,184,102,.08), transparent 20%),
+        radial-gradient(circle at 92% 18%, rgba(29,63,146,.18), transparent 24%),
         linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.028));
       border:1px solid rgba(255,255,255,.05);
     }
@@ -215,7 +198,7 @@
       gap:10px;
       padding:12px 18px;
       border-radius:999px;
-      border:1px solid rgba(214,179,96,.22);
+      border:1px solid rgba(215,184,102,.22);
       background:rgba(255,255,255,.03);
       color:var(--gold-soft);
       font-size:.84rem;
@@ -227,9 +210,9 @@
 
     .hero-title{
       margin:0;
-      max-width:1020px;
-      font-size:clamp(2.9rem, 6vw, 6.1rem);
-      line-height:.90;
+      max-width:1040px;
+      font-size:clamp(2.8rem, 6vw, 6rem);
+      line-height:.91;
       letter-spacing:-.09em;
       font-weight:950;
       text-wrap:balance;
@@ -237,7 +220,7 @@
 
     .hero-sub{
       margin:18px 0 0;
-      max-width:900px;
+      max-width:920px;
       color:var(--muted-2);
       font-size:1.08rem;
       line-height:1.9;
@@ -269,12 +252,12 @@
 
     .btn-gold{
       color:#171717;
-      background:linear-gradient(180deg,#f4e8b4 0%, #d6b360 100%);
-      box-shadow:0 18px 36px rgba(214,179,96,.24);
+      background:linear-gradient(180deg,#f4e7b0 0%, #d7b866 100%);
+      box-shadow:0 18px 36px rgba(215,184,102,.24);
     }
 
     .btn-dark{
-      color:#ffe88f;
+      color:#ffeb93;
       background:rgba(255,255,255,.04);
       border-color:rgba(255,255,255,.08);
       box-shadow:var(--shadow);
@@ -282,7 +265,7 @@
 
     .btn-wa{
       color:#fff;
-      background:linear-gradient(180deg, #2fe26d 0%, #169448 100%);
+      background:linear-gradient(180deg,#2fe26d 0%, #169548 100%);
       box-shadow:0 18px 36px rgba(37,211,102,.22);
     }
 
@@ -349,9 +332,9 @@
       padding:1px;
       background:
         linear-gradient(145deg,
-          rgba(214,179,96,.20),
+          rgba(215,184,102,.20),
           rgba(255,255,255,.04) 28%,
-          rgba(31,71,170,.10) 80%,
+          rgba(29,63,146,.10) 80%,
           rgba(255,255,255,.02)
         );
       box-shadow:0 18px 42px rgba(0,0,0,.30);
@@ -362,7 +345,7 @@
       border-radius:29px;
       padding:22px 18px;
       background:
-        radial-gradient(circle at 88% 86%, rgba(214,179,96,.05), transparent 18%),
+        radial-gradient(circle at 88% 86%, rgba(215,184,102,.05), transparent 18%),
         linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
       border:1px solid rgba(255,255,255,.05);
     }
@@ -391,16 +374,18 @@
       font-size:.97rem;
     }
 
-    .feature-panel{padding:24px 20px}
+    .feature-panel,.cta-panel{
+      padding:24px 20px;
+    }
 
-    .feature-title{
+    .feature-title,.cta-title{
       margin:0 0 10px;
-      font-size:clamp(2rem,3.2vw,3rem);
+      font-size:clamp(2rem,3vw,3rem);
       line-height:1.03;
       letter-spacing:-.05em;
     }
 
-    .feature-text{
+    .feature-text,.cta-text{
       margin:0;
       color:var(--muted-2);
       line-height:1.85;
@@ -433,24 +418,10 @@
     }
 
     .cta-panel{
-      padding:24px 20px;
       display:grid;
-      grid-template-columns:1.15fr .85fr;
+      grid-template-columns:1.12fr .88fr;
       gap:16px;
       align-items:center;
-    }
-
-    .cta-title{
-      margin:0 0 10px;
-      font-size:clamp(2rem,3vw,2.9rem);
-      line-height:1.04;
-      letter-spacing:-.05em;
-    }
-
-    .cta-text{
-      margin:0;
-      color:var(--muted-2);
-      line-height:1.85;
     }
 
     .cta-actions{
@@ -461,9 +432,9 @@
     }
 
     .btn-wine{
-      color:#ffe68d;
-      background:linear-gradient(180deg, #6d2412 0%, #4d170d 100%);
-      box-shadow:0 18px 34px rgba(91,24,14,.25);
+      color:#ffe88f;
+      background:linear-gradient(180deg,#6b1d12 0%, #4c120c 100%);
+      box-shadow:0 18px 34px rgba(100,23,15,.25);
     }
 
     .contact-list{
@@ -490,7 +461,7 @@
     .footer{
       padding:34px 0 110px;
       text-align:center;
-      color:#a3afca;
+      color:#a5b0c9;
       line-height:1.75;
       font-size:.94rem;
     }
@@ -510,7 +481,7 @@
       text-decoration:none;
       font-weight:900;
       color:#fff;
-      background:linear-gradient(180deg,#2fe26d 0%, #169448 100%);
+      background:linear-gradient(180deg,#2fe26d 0%, #169548 100%);
       box-shadow:
         0 18px 34px rgba(37,211,102,.24),
         0 0 0 1px rgba(255,255,255,.08);
@@ -534,8 +505,7 @@
     }
 
     @media (max-width:1100px){
-      .hero-grid{grid-template-columns:repeat(2,1fr)}
-      .mini-grid{grid-template-columns:repeat(2,1fr)}
+      .hero-grid,.mini-grid{grid-template-columns:repeat(2,1fr)}
     }
 
     @media (max-width:980px){
@@ -551,7 +521,7 @@
       .hero-panel,.feature-panel,.cta-panel{padding:22px 17px}
       .frame{border-radius:30px}
       .panel{border-radius:29px}
-      .hero-title{font-size:2.65rem}
+      .hero-title{font-size:2.55rem}
       .hero-sub{font-size:1rem}
       .grid-3,.grid-2,.hero-grid,.mini-grid{grid-template-columns:1fr}
       .btn{width:100%}
@@ -587,40 +557,40 @@
       <div class="container">
         <div class="frame reveal show">
           <div class="panel hero-panel">
-            <div class="pill">🎖️ Cinema Pro 9 • Estado Maior Presidencial</div>
+            <div class="pill">🏛️ Cinema Pro 10 • Casa Civil Executiva Suprema</div>
 
             <h2 class="hero-title">
-              Presença de Estado Maior, autoridade executiva superior e comando institucional com impacto máximo.
+              Coordenação executiva superior, clareza institucional, presença de gabinete central e leitura estratégica de alto nível.
             </h2>
 
             <p class="hero-sub">
-              Uma plataforma visual e estratégica pensada para comunicar liderança,
-              preparo técnico, refinamento institucional, visão executiva e alto valor
-              percebido com leitura imediata de credibilidade e comando.
+              Uma estrutura visual e institucional preparada para comunicar comando,
+              organização, articulação estratégica, preparo técnico, sofisticação e capacidade
+              de conduzir projetos, propostas e soluções com autoridade e refinamento.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-gold" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20solicitar%20uma%20proposta%20de%20alto%20n%C3%ADvel." target="_blank">Solicitar proposta de Estado Maior</a>
-              <a class="btn btn-dark" href="#destaque">Ver destaque estratégico</a>
-              <a class="btn btn-wa" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20institucional." target="_blank">WhatsApp</a>
+              <a class="btn btn-gold" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20solicitar%20uma%20proposta%20executiva%20estrat%C3%A9gica." target="_blank">Solicitar proposta executiva</a>
+              <a class="btn btn-dark" href="#destaque">Ver arquitetura estratégica</a>
+              <a class="btn btn-wa" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20uma%20demanda%20institucional." target="_blank">WhatsApp</a>
             </div>
 
             <div class="hero-grid">
               <div class="hero-box">
-                <strong>Presença de comando</strong>
-                <span>Imagem concebida para transmitir autoridade, hierarquia e alto valor percebido.</span>
+                <strong>Coordenação superior</strong>
+                <span>Presença preparada para transmitir organização, comando e articulação executiva.</span>
               </div>
               <div class="hero-box">
                 <strong>Leitura institucional</strong>
-                <span>Conexão entre experiência, gestão, curadoria, estratégia e visão executiva.</span>
+                <span>Conexão entre experiência, gestão, curadoria, estratégia e posicionamento profissional.</span>
               </div>
               <div class="hero-box">
-                <strong>Canal de conversão</strong>
-                <span>Estrutura pronta para propostas, diagnósticos, reuniões e atuação premium.</span>
+                <strong>Canal qualificado</strong>
+                <span>Estrutura pronta para propostas, diagnósticos, briefings e conversão institucional.</span>
               </div>
               <div class="hero-box">
-                <strong>Prestígio visual</strong>
-                <span>Estética nobre para reforçar confiança, sofisticação e posicionamento superior.</span>
+                <strong>Imagem de confiança</strong>
+                <span>Estética premium para reforçar credibilidade, clareza e valor percebido.</span>
               </div>
             </div>
           </div>
@@ -632,30 +602,30 @@
       <div class="container">
         <div class="frame reveal">
           <div class="panel feature-panel">
-            <div class="eyebrow">Destaque Estratégico</div>
-            <h2 class="feature-title">Uma presença desenhada para autoridade, clareza e alto padrão executivo</h2>
+            <div class="eyebrow">Arquitetura Estratégica</div>
+            <h2 class="feature-title">Uma presença pensada para comando, clareza e alto valor institucional</h2>
             <p class="feature-text">
-              Este modelo foi concebido para unir impacto visual, linguagem institucional,
-              refinamento contemporâneo, objetividade estratégica e leitura premium de comando,
-              fortalecendo reputação, valor percebido e diferenciação.
+              Este modelo foi desenhado para unir impacto visual, objetividade executiva,
+              refinamento de linguagem, ordem institucional e leitura imediata de preparo,
+              consistência e capacidade de atuação em ambientes estratégicos.
             </p>
 
             <div class="mini-grid">
               <div class="mini">
-                <strong>Visual de Estado</strong>
-                <span>Estética mais imponente, limpa e sofisticada, com leitura de autoridade superior.</span>
+                <strong>Imagem de gabinete</strong>
+                <span>Estética mais organizada, nobre e sólida, com leitura institucional superior.</span>
               </div>
               <div class="mini">
-                <strong>Mensagem firme</strong>
-                <span>Texto executivo claro para públicos institucionais, profissionais e estratégicos.</span>
+                <strong>Mensagem precisa</strong>
+                <span>Texto claro, firme e profissional para públicos institucionais e decisórios.</span>
               </div>
               <div class="mini">
                 <strong>Valor ampliado</strong>
-                <span>Estrutura preparada para elevar credibilidade, percepção de nível e confiança.</span>
+                <span>Presença preparada para elevar confiança, percepção de nível e reputação.</span>
               </div>
               <div class="mini">
-                <strong>Presença memorável</strong>
-                <span>Assinatura visual criada para marcar posição com elegância e força.</span>
+                <strong>Posicionamento forte</strong>
+                <span>Assinatura visual construída para marcar autoridade com elegância e sobriedade.</span>
               </div>
             </div>
           </div>
@@ -667,33 +637,33 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Autoridade e Trajetória</div>
-          <h2 class="section-title">Base profissional sólida com leitura contemporânea de alto nível</h2>
+          <h2 class="section-title">Base profissional consolidada com visão executiva contemporânea</h2>
           <p class="section-desc">
-            Uma trajetória que integra experiência técnica, atuação pública,
-            gestão, curadoria, organização institucional, comunicação estratégica,
-            inovação aplicada e capacidade real de transformar conhecimento em posicionamento.
+            Uma trajetória construída com experiência técnica, gestão pública,
+            organização institucional, curadoria, comunicação estratégica, inovação aplicada
+            e capacidade real de transformar conhecimento em direção, presença e valor.
           </p>
         </div>
 
         <div class="grid grid-3">
           <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">🏛️ Base executiva</div>
+              <div class="tag">🏛️ Núcleo executivo</div>
               <h3>Contabilidade, gestão e inteligência institucional</h3>
               <p>
-                Atuação conectando gestão financeira, contabilidade,
-                leitura organizacional, curadoria executiva e direção estratégica.
+                Atuação conectando leitura organizacional, gestão financeira,
+                contabilidade, curadoria executiva e estruturação estratégica.
               </p>
             </div>
           </div>
 
           <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">🧠 Leitura estratégica</div>
-              <h3>Curadoria, inovação e visão de posicionamento</h3>
+              <div class="tag">🧠 Curadoria estratégica</div>
+              <h3>Inovação, comunicação e visão institucional</h3>
               <p>
-                Integração entre comunicação, estratégia, curadoria,
-                IA e construção de presença institucional premium.
+                Integração entre curadoria, estratégia, IA, presença digital
+                e construção de posicionamento profissional de alto padrão.
               </p>
             </div>
           </div>
@@ -701,10 +671,10 @@
           <div class="card-frame reveal">
             <div class="card">
               <div class="tag">📈 Valor percebido</div>
-              <h3>Imagem preparada para oportunidades maiores</h3>
+              <h3>Imagem estruturada para oportunidades maiores</h3>
               <p>
-                Estrutura voltada a ampliar confiança, reconhecimento,
-                autoridade e diferenciação no ambiente digital.
+                Plataforma pronta para ampliar reconhecimento,
+                autoridade, confiança e diferenciação institucional.
               </p>
             </div>
           </div>
@@ -716,29 +686,29 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Projetos Estratégicos</div>
-          <h2 class="section-title">Frentes conectadas a presença, estrutura, curadoria e transformação</h2>
+          <h2 class="section-title">Frentes de atuação ligadas a presença, estrutura, curadoria e transformação</h2>
           <p class="section-desc">
             Ambientes de atuação voltados ao fortalecimento institucional,
-            posicionamento digital, narrativa de valor e inovação aplicada.
+            posicionamento digital, organização estratégica e construção de valor.
           </p>
         </div>
 
         <div class="grid grid-2">
           <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">💼 Presença premium</div>
-              <h3>Imagem institucional de alto impacto</h3>
+              <div class="tag">💼 Presença institucional</div>
+              <h3>Posicionamento digital de alto impacto</h3>
               <p>
-                Estrutura visual e narrativa pensada para ampliar autoridade,
-                sofisticação, leitura executiva e confiança.
+                Estrutura visual e narrativa pensada para comunicar autoridade,
+                solidez, clareza e sofisticação profissional.
               </p>
             </div>
           </div>
 
           <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">🤖 IA Aplicada</div>
-              <h3>Curadoria, automação e inteligência profissional</h3>
+              <div class="tag">🤖 IA aplicada</div>
+              <h3>Automação, curadoria e inteligência profissional</h3>
               <p>
                 Uso estratégico de IA para apoiar organização, leitura de cenário,
                 produção qualificada e fortalecimento institucional.
@@ -749,17 +719,17 @@
           <div class="card-frame reveal">
             <div class="card">
               <div class="tag">🌍 Viracopos Global</div>
-              <h3>Território, ecossistema e narrativa de valor</h3>
+              <h3>Ecossistema, narrativa e conexão territorial</h3>
               <p>
-                Conexão entre patrimônio, turismo, inovação, identidade territorial
-                e presença institucional de padrão elevado.
+                Conexão entre patrimônio, inovação, identidade territorial
+                e presença institucional de padrão superior.
               </p>
             </div>
           </div>
 
           <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">📊 Estrutura Executiva</div>
+              <div class="tag">📊 Estrutura executiva</div>
               <h3>Clareza, direção e formato de atuação</h3>
               <p>
                 Organização de prioridades, escopo, canais e presença institucional
@@ -775,10 +745,10 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Serviços e Soluções</div>
-          <h2 class="section-title">Modelos de atuação para demandas institucionais e executivas</h2>
+          <h2 class="section-title">Modelos de atuação para demandas executivas e institucionais</h2>
           <p class="section-desc">
             Formatos voltados a diagnóstico, consultoria, implantação assistida
-            e fortalecimento da presença digital com linguagem premium.
+            e fortalecimento da presença digital com linguagem premium e direção clara.
           </p>
         </div>
 
@@ -786,9 +756,9 @@
           <div class="card-frame reveal">
             <div class="card">
               <div class="tag">📌 Diagnóstico Inicial</div>
-              <h3>Leitura executiva da demanda</h3>
+              <h3>Leitura institucional da demanda</h3>
               <p>
-                Análise inicial de contexto, prioridade, necessidade e melhor caminho estratégico.
+                Avaliação inicial de contexto, prioridade, necessidade e caminho estratégico recomendado.
               </p>
             </div>
           </div>
@@ -798,8 +768,8 @@
               <div class="tag">🤝 Consultoria por Projeto</div>
               <h3>Acompanhamento orientado a direção e resultado</h3>
               <p>
-                Apoio em projetos específicos com foco em organização,
-                clareza de atuação e posicionamento qualificado.
+                Apoio a projetos específicos com foco em organização,
+                posicionamento, clareza de atuação e execução qualificada.
               </p>
             </div>
           </div>
@@ -807,10 +777,10 @@
           <div class="card-frame reveal">
             <div class="card">
               <div class="tag">⚙️ Implantação Assistida</div>
-              <h3>Aplicação com suporte institucional</h3>
+              <h3>Aplicação com apoio estratégico</h3>
               <p>
-                Implementação com apoio estratégico à presença digital,
-                comunicação e fortalecimento institucional.
+                Implementação orientada à presença digital,
+                ativação de canais, organização institucional e fortalecimento da imagem.
               </p>
             </div>
           </div>
@@ -862,13 +832,12 @@
     </div>
   </footer>
 
-  <a class="float-wa" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20institucional." target="_blank">
+  <a class="float-wa" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20uma%20demanda%20institucional." target="_blank">
     💬 WhatsApp
   </a>
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
-
     const observer = new IntersectionObserver((entries)=>{
       entries.forEach((entry)=>{
         if(entry.isIntersecting){
@@ -883,4 +852,4 @@
     });
   </script>
 </body>
-              </html>
+    </html>
