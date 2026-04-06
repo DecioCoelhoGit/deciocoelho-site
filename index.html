@@ -6,25 +6,25 @@
   <title>Décio Coelho | Viracopos Global</title>
   <meta
     name="description"
-    content="Décio Coelho • Viracopos Global • Centro de Inteligência Profissional Digital • Presença executiva, inteligência institucional, curadoria estratégica e posicionamento premium."
+    content="Décio Coelho • Viracopos Global • Centro de Inteligência Profissional Digital • Presença institucional premium, inteligência executiva, curadoria estratégica e posicionamento de alto valor."
   />
 
   <style>
     :root{
-      --bg:#03050b;
-      --bg-soft:#081121;
+      --bg:#02040a;
+      --bg2:#071126;
       --panel:rgba(255,255,255,.05);
-      --panel-2:rgba(255,255,255,.07);
+      --panel-strong:rgba(255,255,255,.07);
       --line:rgba(255,255,255,.08);
-      --text:#f5f7fb;
-      --muted:#b7c2dc;
-      --muted-2:#d2daf0;
-      --gold:#d9b65b;
-      --gold-soft:#f5df9c;
-      --green:#25D366;
-      --blue:#4d78ff;
-      --shadow:0 24px 60px rgba(0,0,0,.34);
-      --radius:30px;
+      --text:#f7f8fc;
+      --muted:#bcc6dc;
+      --muted-2:#d6ddf0;
+      --gold:#d6b15a;
+      --gold-strong:#f0db97;
+      --emerald:#1fb15d;
+      --wa:#25D366;
+      --shadow:0 26px 70px rgba(0,0,0,.34);
+      --radius:32px;
       --max:1180px;
     }
 
@@ -36,9 +36,10 @@
       font-family:Inter, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 12% 8%, rgba(217,182,91,.12), transparent 22%),
-        radial-gradient(circle at 88% 10%, rgba(77,120,255,.16), transparent 24%),
-        linear-gradient(180deg, #02040a 0%, #071126 45%, #03060d 100%);
+        radial-gradient(circle at 12% 10%, rgba(214,177,90,.12), transparent 20%),
+        radial-gradient(circle at 88% 12%, rgba(53,97,220,.18), transparent 22%),
+        radial-gradient(circle at 50% 120%, rgba(31,177,93,.09), transparent 20%),
+        linear-gradient(180deg,#010308 0%, #051023 45%, #03060d 100%);
       overflow-x:hidden;
     }
 
@@ -47,8 +48,10 @@
       position:fixed;
       inset:0;
       pointer-events:none;
+      z-index:0;
+      opacity:.18;
       background:
-        linear-gradient(rgba(255,255,255,.015), rgba(255,255,255,0)),
+        linear-gradient(rgba(255,255,255,.016), rgba(255,255,255,0)),
         repeating-linear-gradient(
           to bottom,
           rgba(255,255,255,.010) 0px,
@@ -56,11 +59,9 @@
           transparent 2px,
           transparent 4px
         );
-      opacity:.20;
-      z-index:0;
     }
 
-    .glow{
+    .bg-glow{
       position:fixed;
       inset:0;
       pointer-events:none;
@@ -71,39 +72,39 @@
     .orb{
       position:absolute;
       border-radius:50%;
-      filter:blur(95px);
-      opacity:.16;
-      animation:floaty 14s ease-in-out infinite;
+      filter:blur(100px);
+      opacity:.14;
+      animation:floaty 16s ease-in-out infinite;
     }
 
     .orb.one{
       width:320px;height:320px;
-      background:rgba(217,182,91,.85);
-      left:-90px;top:-80px;
+      background:rgba(214,177,90,.95);
+      left:-90px;top:-90px;
     }
 
     .orb.two{
       width:360px;height:360px;
-      background:rgba(77,120,255,.85);
-      right:-140px;top:40px;
+      background:rgba(56,93,219,.95);
+      right:-130px;top:20px;
       animation-delay:-5s;
     }
 
     .orb.three{
-      width:260px;height:260px;
-      background:rgba(37,211,102,.45);
-      left:30%;bottom:-120px;
-      animation-delay:-9s;
+      width:280px;height:280px;
+      background:rgba(37,211,102,.55);
+      right:20%;bottom:-120px;
       opacity:.08;
+      animation-delay:-10s;
     }
 
     @keyframes floaty{
       0%,100%{transform:translateY(0) translateX(0) scale(1)}
-      50%{transform:translateY(18px) translateX(10px) scale(1.06)}
+      50%{transform:translateY(20px) translateX(12px) scale(1.06)}
     }
 
     .container{
-      width:min(calc(100% - 28px), var(--max));
+      width:min(calc(100% - 26px), var(--max));
       margin:0 auto;
       position:relative;
       z-index:2;
@@ -113,13 +114,13 @@
       position:sticky;
       top:0;
       z-index:90;
-      backdrop-filter:blur(20px);
-      background:rgba(4,8,18,.72);
+      backdrop-filter:blur(18px);
+      background:rgba(4,8,17,.74);
       border-bottom:1px solid rgba(255,255,255,.05);
     }
 
     .topbar-inner{
-      width:min(calc(100% - 24px), var(--max));
+      width:min(calc(100% - 22px), var(--max));
       margin:0 auto;
       display:flex;
       align-items:center;
@@ -128,29 +129,29 @@
     }
 
     .logo{
-      width:72px;
-      height:72px;
-      flex:none;
-      border-radius:24px;
+      width:78px;
+      height:78px;
+      border-radius:26px;
       display:grid;
       place-items:center;
-      font-size:31px;
+      font-size:32px;
+      flex:none;
       position:relative;
       overflow:hidden;
       background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.10);
       box-shadow:
         0 0 0 1px rgba(255,255,255,.03),
-        0 14px 34px rgba(0,0,0,.30);
+        0 16px 36px rgba(0,0,0,.32);
     }
 
     .logo::after{
       content:"";
       position:absolute;
       inset:-40%;
-      background:linear-gradient(120deg, transparent 35%, rgba(255,255,255,.20) 50%, transparent 65%);
+      background:linear-gradient(120deg, transparent 35%, rgba(255,255,255,.18) 50%, transparent 65%);
       transform:translateX(-120%);
-      animation:shine 5.5s linear infinite;
+      animation:shine 6s linear infinite;
     }
 
     @keyframes shine{
@@ -159,14 +160,14 @@
 
     .brand h1{
       margin:0;
-      font-size:clamp(1.9rem,2.8vw,2.7rem);
+      font-size:clamp(1.9rem,2.7vw,2.9rem);
       line-height:1;
       letter-spacing:-.05em;
       font-weight:950;
     }
 
     .brand p{
-      margin:7px 0 0;
+      margin:8px 0 0;
       color:var(--muted);
       font-size:1rem;
       line-height:1.35;
@@ -180,37 +181,40 @@
       padding:34px 0 8px;
     }
 
-    .hero-shell{
-      border-radius:40px;
+    .frame{
+      border-radius:42px;
       padding:1px;
       background:
         linear-gradient(145deg,
-          rgba(217,182,91,.28),
-          rgba(255,255,255,.05) 26%,
-          rgba(77,120,255,.16) 80%,
-          rgba(255,255,255,.04)
+          rgba(214,177,90,.32),
+          rgba(255,255,255,.05) 28%,
+          rgba(53,97,220,.18) 78%,
+          rgba(255,255,255,.03)
         );
-      box-shadow:0 28px 80px rgba(0,0,0,.40);
+      box-shadow:0 30px 80px rgba(0,0,0,.42);
     }
 
-    .hero-panel{
+    .panel{
       position:relative;
       overflow:hidden;
-      border-radius:39px;
-      padding:26px 22px 24px;
+      border-radius:41px;
       background:
-        radial-gradient(circle at 12% 14%, rgba(217,182,91,.10), transparent 20%),
-        radial-gradient(circle at 88% 18%, rgba(77,120,255,.16), transparent 22%),
+        radial-gradient(circle at 10% 12%, rgba(214,177,90,.10), transparent 20%),
+        radial-gradient(circle at 92% 20%, rgba(53,97,220,.16), transparent 22%),
         linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.035));
       border:1px solid rgba(255,255,255,.05);
     }
 
-    .hero-panel::before{
+    .panel::before{
       content:"";
       position:absolute;
       inset:0;
       pointer-events:none;
-      background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 20%, transparent 80%, rgba(255,255,255,.02));
+      background:linear-gradient(180deg, rgba(255,255,255,.025), transparent 20%, transparent 80%, rgba(255,255,255,.015));
+    }
+
+    .hero-panel{
+      padding:28px 22px 24px;
     }
 
     .pill{
@@ -219,11 +223,11 @@
       gap:10px;
       padding:12px 18px;
       border-radius:999px;
-      border:1px solid rgba(217,182,91,.22);
+      border:1px solid rgba(214,177,90,.22);
       background:rgba(255,255,255,.03);
-      color:var(--gold-soft);
+      color:var(--gold-strong);
+      font-size:.84rem;
       font-weight:900;
-      font-size:.83rem;
       letter-spacing:.08em;
       text-transform:uppercase;
       margin-bottom:16px;
@@ -231,10 +235,10 @@
 
     .hero-title{
       margin:0;
-      max-width:960px;
-      font-size:clamp(2.6rem,6vw,5.7rem);
-      line-height:.92;
-      letter-spacing:-.075em;
+      max-width:980px;
+      font-size:clamp(2.7rem,6.2vw,5.9rem);
+      line-height:.91;
+      letter-spacing:-.08em;
       font-weight:950;
       text-wrap:balance;
     }
@@ -243,8 +247,8 @@
       margin:18px 0 0;
       max-width:840px;
       color:var(--muted-2);
-      font-size:1.06rem;
-      line-height:1.82;
+      font-size:1.07rem;
+      line-height:1.85;
     }
 
     .hero-actions{
@@ -255,7 +259,7 @@
     }
 
     .btn{
-      min-height:58px;
+      min-height:60px;
       padding:0 24px;
       border-radius:999px;
       display:inline-flex;
@@ -273,8 +277,8 @@
 
     .btn-gold{
       color:#171717;
-      background:linear-gradient(180deg, #f5e5a6 0%, #d9b65b 100%);
-      box-shadow:0 14px 32px rgba(217,182,91,.25);
+      background:linear-gradient(180deg,#f5e8b0 0%, #d6b15a 100%);
+      box-shadow:0 16px 36px rgba(214,177,90,.24);
     }
 
     .btn-dark{
@@ -290,28 +294,28 @@
       box-shadow:0 16px 34px rgba(37,211,102,.22);
     }
 
-    .hero-meta{
+    .hero-metrics{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:14px;
       margin-top:22px;
     }
 
-    .meta-card{
+    .metric{
       padding:18px 16px;
       border-radius:24px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 14px 30px rgba(0,0,0,.22);
+      box-shadow:0 14px 32px rgba(0,0,0,.22);
     }
 
-    .meta-card strong{
+    .metric strong{
       display:block;
       margin-bottom:6px;
       font-size:1rem;
     }
 
-    .meta-card span{
+    .metric span{
       color:var(--muted);
       line-height:1.6;
       font-size:.95rem;
@@ -324,7 +328,7 @@
     .eyebrow{
       display:inline-block;
       margin-bottom:8px;
-      color:var(--gold-soft);
+      color:var(--gold-strong);
       font-size:.82rem;
       font-weight:900;
       letter-spacing:.09em;
@@ -333,7 +337,7 @@
 
     .section-title{
       margin:0 0 10px;
-      font-size:clamp(1.8rem,3vw,2.7rem);
+      font-size:clamp(1.85rem,3vw,2.8rem);
       line-height:1.04;
       letter-spacing:-.045em;
     }
@@ -354,17 +358,17 @@
     .grid-3{grid-template-columns:repeat(3,1fr)}
     .grid-2{grid-template-columns:repeat(2,1fr)}
 
-    .card-shell{
+    .card-frame{
       border-radius:30px;
       padding:1px;
       background:
         linear-gradient(145deg,
-          rgba(217,182,91,.20),
-          rgba(255,255,255,.04) 28%,
-          rgba(77,120,255,.10) 82%,
-          rgba(255,255,255,.04)
+          rgba(214,177,90,.22),
+          rgba(255,255,255,.04) 30%,
+          rgba(53,97,220,.10) 80%,
+          rgba(255,255,255,.03)
         );
-      box-shadow:0 18px 40px rgba(0,0,0,.28);
+      box-shadow:0 18px 42px rgba(0,0,0,.30);
     }
 
     .card{
@@ -372,7 +376,7 @@
       border-radius:29px;
       padding:22px 18px;
       background:
-        radial-gradient(circle at 88% 86%, rgba(217,182,91,.08), transparent 20%),
+        radial-gradient(circle at 88% 86%, rgba(214,177,90,.07), transparent 20%),
         linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.05);
     }
@@ -382,7 +386,7 @@
       align-items:center;
       gap:8px;
       margin-bottom:10px;
-      color:var(--gold-soft);
+      color:var(--gold-strong);
       font-size:.9rem;
       font-weight:900;
     }
@@ -401,89 +405,65 @@
       font-size:.97rem;
     }
 
-    .showcase-shell{
-      border-radius:34px;
-      padding:1px;
-      background:linear-gradient(145deg, rgba(217,182,91,.25), rgba(255,255,255,.04), rgba(77,120,255,.12));
-      box-shadow:0 22px 48px rgba(0,0,0,.30);
-    }
-
-    .showcase{
-      border-radius:33px;
+    .highlight-panel{
       padding:24px 20px;
-      background:
-        radial-gradient(circle at 10% 12%, rgba(217,182,91,.10), transparent 22%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.035));
-      border:1px solid rgba(255,255,255,.05);
     }
 
-    .showcase h2{
+    .highlight-title{
       margin:0 0 10px;
-      font-size:clamp(1.8rem,3vw,2.6rem);
-      line-height:1.04;
-      letter-spacing:-.045em;
+      font-size:clamp(1.9rem,3.2vw,2.9rem);
+      line-height:1.03;
+      letter-spacing:-.05em;
     }
 
-    .showcase p{
+    .highlight-text{
       margin:0;
       color:var(--muted-2);
       line-height:1.8;
     }
 
-    .showcase-grid{
+    .mini-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:14px;
       margin-top:18px;
     }
 
-    .showcase-item{
+    .mini{
       padding:16px 15px;
       border-radius:22px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
     }
 
-    .showcase-item strong{
+    .mini strong{
       display:block;
       margin-bottom:6px;
       font-size:1rem;
     }
 
-    .showcase-item span{
+    .mini span{
       color:var(--muted);
       line-height:1.58;
       font-size:.94rem;
     }
 
-    .cta-shell{
-      border-radius:34px;
-      padding:1px;
-      background:linear-gradient(145deg, rgba(217,182,91,.26), rgba(255,255,255,.04), rgba(77,120,255,.12));
-      box-shadow:0 22px 50px rgba(0,0,0,.32);
-    }
-
-    .cta{
-      border-radius:33px;
+    .cta-panel{
       padding:24px 20px;
-      background:
-        radial-gradient(circle at 12% 14%, rgba(217,182,91,.10), transparent 22%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.035));
-      border:1px solid rgba(255,255,255,.05);
       display:grid;
       grid-template-columns:1.15fr .85fr;
       gap:16px;
       align-items:center;
     }
 
-    .cta h2{
+    .cta-title{
       margin:0 0 10px;
-      font-size:clamp(1.8rem,3vw,2.6rem);
+      font-size:clamp(1.9rem,3vw,2.8rem);
       line-height:1.04;
-      letter-spacing:-.045em;
+      letter-spacing:-.05em;
     }
 
-    .cta p{
+    .cta-text{
       margin:0;
       color:var(--muted-2);
       line-height:1.8;
@@ -554,7 +534,7 @@
 
     .reveal{
       opacity:0;
-      transform:translateY(28px) scale(.985);
+      transform:translateY(26px) scale(.985);
       transition:opacity .8s ease, transform .8s ease;
     }
 
@@ -563,26 +543,27 @@
       transform:translateY(0) scale(1);
     }
 
-    @media (max-width: 980px){
+    @media (max-width:980px){
       .grid-3{grid-template-columns:1fr 1fr}
-      .hero-meta{grid-template-columns:1fr}
-      .showcase-grid{grid-template-columns:1fr}
-      .cta{grid-template-columns:1fr}
+      .hero-metrics{grid-template-columns:1fr}
+      .mini-grid{grid-template-columns:1fr}
+      .cta-panel{grid-template-columns:1fr}
     }
 
-    @media (max-width: 720px){
+    @media (max-width:720px){
       .topbar-inner{padding:12px 0}
-      .logo{width:66px;height:66px;font-size:28px;border-radius:22px}
-      .brand h1{font-size:1.7rem}
+      .logo{width:68px;height:68px;font-size:28px;border-radius:22px}
+      .brand h1{font-size:1.72rem}
       .brand p{font-size:.96rem}
       .hero{padding-top:28px}
-      .hero-shell{border-radius:30px}
-      .hero-panel{border-radius:29px;padding:22px 18px 20px}
-      .hero-title{font-size:2.45rem}
-      .hero-sub{font-size:1rem;line-height:1.76}
+      .frame{border-radius:30px}
+      .panel{border-radius:29px}
+      .hero-panel,.highlight-panel,.cta-panel{padding:22px 17px}
+      .hero-title{font-size:2.55rem}
+      .hero-sub{font-size:1rem}
       .grid-3,.grid-2{grid-template-columns:1fr}
-      .card-shell,.showcase-shell,.cta-shell{border-radius:28px}
-      .card,.showcase,.cta{border-radius:27px;padding:22px 17px}
+      .card-frame{border-radius:28px}
+      .card{border-radius:27px}
       .btn{width:100%}
       .float-wa{
         right:14px;
@@ -595,7 +576,7 @@
 </head>
 <body>
 
-  <div class="glow">
+  <div class="bg-glow">
     <div class="orb one"></div>
     <div class="orb two"></div>
     <div class="orb three"></div>
@@ -614,38 +595,38 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="hero-shell reveal show">
-          <div class="hero-panel">
-            <div class="pill"> Cinema Pro 6 • Apple Keynote Supremo</div>
+        <div class="frame reveal show">
+          <div class="panel hero-panel">
+            <div class="pill">👑 Cinema Pro 7 • Luxo Institucional Imperial</div>
 
             <h2 class="hero-title">
-              Estratégia, presença executiva e inteligência institucional com estética premium absoluta.
+              Presença institucional imperial, sofisticação executiva e valor percebido em nível máximo.
             </h2>
 
             <p class="hero-sub">
-              Uma presença digital desenhada para comunicar autoridade, sofisticação,
-              clareza estratégica, preparo técnico e capacidade de atuar com projetos,
-              consultorias, curadoria e inovação aplicada em alto nível.
+              Uma estrutura premium concebida para elevar autoridade, presença digital,
+              leitura institucional, confiança, clareza estratégica e força de posicionamento
+              com acabamento visual ainda mais nobre e impactante.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-gold" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20proposta%20executiva%20premium." target="_blank">Solicitar proposta executiva</a>
-              <a class="btn btn-dark" href="#destaque">Ver destaque estratégico</a>
-              <a class="btn btn-wa" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20uma%20demanda%20institucional." target="_blank">WhatsApp</a>
+              <a class="btn btn-gold" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20solicitar%20uma%20proposta%20institucional%20premium." target="_blank">Solicitar proposta institucional</a>
+              <a class="btn btn-dark" href="#impacto">Ver impacto estratégico</a>
+              <a class="btn btn-wa" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20institucional." target="_blank">WhatsApp</a>
             </div>
 
-            <div class="hero-meta">
-              <div class="meta-card">
-                <strong>Posicionamento superior</strong>
-                <span>Imagem preparada para ampliar confiança, autoridade e valor percebido.</span>
+            <div class="hero-metrics">
+              <div class="metric">
+                <strong>Autoridade ampliada</strong>
+                <span>Imagem institucional preparada para transmitir grandeza, preparo e credibilidade.</span>
               </div>
-              <div class="meta-card">
-                <strong>Leitura institucional</strong>
-                <span>Conexão entre experiência, gestão pública, inovação e visão executiva.</span>
+              <div class="metric">
+                <strong>Leitura executiva</strong>
+                <span>Conexão entre experiência, gestão, curadoria, inovação e visão estratégica.</span>
               </div>
-              <div class="meta-card">
-                <strong>Canal direto</strong>
-                <span>Estrutura pronta para contato, proposta, briefing e conversão qualificada.</span>
+              <div class="metric">
+                <strong>Canal de conversão</strong>
+                <span>Estrutura pronta para propostas, reuniões, diagnósticos e atuação qualificada.</span>
               </div>
             </div>
           </div>
@@ -653,30 +634,30 @@
       </div>
     </section>
 
-    <section class="section" id="destaque">
+    <section class="section" id="impacto">
       <div class="container">
-        <div class="showcase-shell reveal">
-          <div class="showcase">
-            <div class="eyebrow">Destaque Estratégico</div>
-            <h2>Uma presença pensada para autoridade, clareza e alto valor</h2>
-            <p>
-              Este modelo foi concebido para unir impacto visual, linguagem executiva,
-              refinamento estético e objetividade institucional, produzindo uma leitura
-              imediata de confiança, preparo e diferenciação.
+        <div class="frame reveal">
+          <div class="panel highlight-panel">
+            <div class="eyebrow">Impacto Estratégico</div>
+            <h2 class="highlight-title">Uma presença desenhada para grandeza institucional</h2>
+            <p class="highlight-text">
+              Este formato foi desenvolvido para transmitir autoridade, solidez,
+              sofisticação visual, preparação técnica e capacidade de atuar com
+              projetos, consultorias, curadoria estratégica e posicionamento de alto valor.
             </p>
 
-            <div class="showcase-grid">
-              <div class="showcase-item">
-                <strong>Visual premium</strong>
-                <span>Estética mais limpa, nobre e sofisticada, com leitura de palco principal.</span>
+            <div class="mini-grid">
+              <div class="mini">
+                <strong>Presença superior</strong>
+                <span>Visual mais nobre, denso e prestigioso, com leitura de alta hierarquia.</span>
               </div>
-              <div class="showcase-item">
-                <strong>Mensagem refinada</strong>
-                <span>Tom executivo, direto e elegante para públicos institucionais e estratégicos.</span>
+              <div class="mini">
+                <strong>Mensagem forte</strong>
+                <span>Linguagem clara, executiva e premium para públicos institucionais exigentes.</span>
               </div>
-              <div class="showcase-item">
-                <strong>Prontidão comercial</strong>
-                <span>Canal de entrada preparado para demandas, reuniões e propostas personalizadas.</span>
+              <div class="mini">
+                <strong>Valor percebido</strong>
+                <span>Estrutura pensada para aumentar reputação, confiança e diferenciação.</span>
               </div>
             </div>
           </div>
@@ -688,44 +669,44 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Autoridade e Trajetória</div>
-          <h2 class="section-title">Base profissional sólida com sofisticação contemporânea</h2>
+          <h2 class="section-title">Base profissional sólida com linguagem institucional de alto padrão</h2>
           <p class="section-desc">
-            Uma trajetória que integra experiência técnica, atuação pública,
-            leitura institucional, comunicação estratégica, inovação aplicada
-            e capacidade real de transformar conhecimento em posicionamento.
+            Uma trajetória construída a partir de experiência técnica, gestão pública,
+            gestão financeira, leitura organizacional, curadoria estratégica e inovação,
+            convertida em presença digital forte e posicionamento premium.
           </p>
         </div>
 
         <div class="grid grid-3">
-          <div class="card-shell reveal">
+          <div class="card-frame reveal">
             <div class="card">
               <div class="tag">🏛️ Base executiva</div>
               <h3>Contabilidade, gestão e inteligência institucional</h3>
               <p>
-                Atuação conectando gestão pública, gestão financeira, contabilidade,
-                curadoria executiva, organização e leitura estratégica.
+                Atuação conectando gestão pública, gestão financeira, organização,
+                leitura institucional e construção de autoridade profissional.
               </p>
             </div>
           </div>
 
-          <div class="card-shell reveal">
+          <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">🧠 Inteligência aplicada</div>
-              <h3>Inovação, IA e presença profissional</h3>
+              <div class="tag">🧠 Curadoria estratégica</div>
+              <h3>Inovação, narrativa e posicionamento</h3>
               <p>
-                Integração entre experiência, tecnologia, curadoria, narrativa e
-                construção de valor institucional com linguagem forte e refinada.
+                Integração entre experiência, comunicação, curadoria, IA e visão executiva
+                para presença institucional sofisticada e contemporânea.
               </p>
             </div>
           </div>
 
-          <div class="card-shell reveal">
+          <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">📈 Valor percebido</div>
-              <h3>Imagem premium para oportunidades de maior nível</h3>
+              <div class="tag">📈 Valor premium</div>
+              <h3>Imagem preparada para oportunidades superiores</h3>
               <p>
-                Estrutura desenvolvida para fortalecer reputação, percepção de valor
-                e posicionamento em ambientes profissionais mais exigentes.
+                Estrutura visual e estratégica voltada a ampliar confiança,
+                percepção de valor e reconhecimento profissional de alto nível.
               </p>
             </div>
           </div>
@@ -737,54 +718,54 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Projetos Estratégicos</div>
-          <h2 class="section-title">Soluções conectadas a presença, estrutura e impacto</h2>
+          <h2 class="section-title">Frentes conectadas a presença, estrutura e transformação</h2>
           <p class="section-desc">
-            Frentes institucionais e digitais desenhadas para unir posicionamento,
-            organização, inovação, curadoria e comunicação com padrão premium.
+            Ambientes de atuação voltados ao fortalecimento institucional, organização,
+            inovação aplicada, curadoria e presença digital com padrão elevado.
           </p>
         </div>
 
         <div class="grid grid-2">
-          <div class="card-shell reveal">
+          <div class="card-frame reveal">
             <div class="card">
               <div class="tag">💼 Posicionamento Premium</div>
-              <h3>Presença institucional de alto padrão</h3>
+              <h3>Presença institucional de luxo estratégico</h3>
               <p>
-                Estrutura visual e estratégica para ampliar confiança,
-                autoridade e capacidade de diferenciação.
+                Estrutura visual e narrativa voltada a ampliar autoridade,
+                refinamento e percepção de grande valor.
               </p>
             </div>
           </div>
 
-          <div class="card-shell reveal">
+          <div class="card-frame reveal">
             <div class="card">
               <div class="tag">🤖 IA Aplicada</div>
-              <h3>Curadoria, automação e inteligência estratégica</h3>
+              <h3>Curadoria, automação e inteligência profissional</h3>
               <p>
-                Uso de IA para apoiar organização, produção, leitura de cenário,
-                comunicação e fortalecimento institucional.
+                Uso de IA para apoiar organização, leitura de cenário,
+                produção estratégica e fortalecimento institucional.
               </p>
             </div>
           </div>
 
-          <div class="card-shell reveal">
+          <div class="card-frame reveal">
             <div class="card">
               <div class="tag">🌍 Viracopos Global</div>
-              <h3>Narrativa, território e ecossistema</h3>
+              <h3>Território, ecossistema e narrativa de valor</h3>
               <p>
-                Integração entre turismo, patrimônio, inovação, identidade territorial
+                Conexão entre turismo, patrimônio, inovação, identidade territorial
                 e comunicação institucional qualificada.
               </p>
             </div>
           </div>
 
-          <div class="card-shell reveal">
+          <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">📊 Estrutura e Organização</div>
-              <h3>Método, clareza e direção executiva</h3>
+              <div class="tag">📊 Estrutura Executiva</div>
+              <h3>Método, clareza e direção para ação</h3>
               <p>
-                Organização de fluxos, escopo, prioridades e presença institucional
-                com leitura clara e objetiva.
+                Organização de prioridades, escopo, fluxos e presença institucional
+                com visão objetiva e sofisticação executiva.
               </p>
             </div>
           </div>
@@ -796,40 +777,41 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Serviços e Soluções</div>
-          <h2 class="section-title">Formatos de atuação com leitura prática e valor estratégico</h2>
+          <h2 class="section-title">Formatos de atuação para demandas estratégicas e institucionais</h2>
           <p class="section-desc">
-            Possibilidades de trabalho voltadas ao diagnóstico, consultoria,
-            implantação assistida e construção de presença institucional.
+            Modelos de trabalho voltados a diagnóstico, consultoria, implantação assistida
+            e construção de presença institucional com acabamento premium.
           </p>
         </div>
 
         <div class="grid grid-3">
-          <div class="card-shell reveal">
+          <div class="card-frame reveal">
             <div class="card">
               <div class="tag">📌 Diagnóstico Inicial</div>
-              <h3>Leitura institucional da demanda</h3>
+              <h3>Leitura executiva da demanda</h3>
               <p>
-                Análise inicial de contexto, prioridade, necessidade e melhor caminho estratégico.
+                Análise inicial de contexto, prioridade, necessidade e caminho estratégico.
               </p>
             </div>
           </div>
 
-          <div class="card-shell reveal">
+          <div class="card-frame reveal">
             <div class="card">
               <div class="tag">🤝 Consultoria por Projeto</div>
-              <h3>Acompanhamento orientado a resultado</h3>
+              <h3>Acompanhamento orientado a direção e resultado</h3>
               <p>
-                Apoio em projetos específicos com foco em clareza, organização e direção executiva.
+                Apoio em projetos específicos com foco em clareza, organização e posicionamento.
               </p>
             </div>
           </div>
 
-          <div class="card-shell reveal">
+          <div class="card-frame reveal">
             <div class="card">
               <div class="tag">⚙️ Implantação Assistida</div>
-              <h3>Aplicação com apoio estratégico</h3>
+              <h3>Aplicação com suporte institucional</h3>
               <p>
-                Implementação de soluções com suporte à comunicação, presença e fortalecimento institucional.
+                Implementação com apoio estratégico à presença digital,
+                comunicação e fortalecimento institucional.
               </p>
             </div>
           </div>
@@ -839,14 +821,14 @@
 
     <section class="section">
       <div class="container">
-        <div class="cta-shell reveal">
-          <div class="cta">
+        <div class="frame reveal">
+          <div class="panel cta-panel">
             <div>
               <div class="eyebrow">Próximo passo recomendado</div>
-              <h2>Agendar uma conversa executiva inicial</h2>
-              <p>
-                Um contato inicial permite alinhar contexto, prioridade, escopo,
-                formato de atuação e proposta institucional personalizada.
+              <h2 class="cta-title">Agendar uma conversa executiva inicial</h2>
+              <p class="cta-text">
+                Um contato inicial permite alinhar contexto, prioridade, demanda,
+                escopo, formato de atuação e proposta institucional personalizada.
               </p>
 
               <div class="cta-actions">
@@ -881,7 +863,7 @@
     </div>
   </footer>
 
-  <a class="float-wa" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20uma%20demanda%20institucional." target="_blank">
+  <a class="float-wa" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20institucional." target="_blank">
     💬 WhatsApp
   </a>
 
@@ -902,4 +884,4 @@
     });
   </script>
 </body>
-            </html>
+  </html>
