@@ -6,29 +6,29 @@
   <title>Décio Coelho | Viracopos Global</title>
   <meta
     name="description"
-    content="Décio Coelho • Viracopos Global • Centro de Inteligência Profissional Digital • Presença institucional suprema, inteligência executiva e posicionamento premium."
+    content="Décio Coelho • Viracopos Global • Centro de Inteligência Profissional Digital • Estado Maior Presidencial • presença executiva, autoridade institucional e posicionamento premium."
   />
 
   <style>
     :root{
-      --bg:#03050b;
-      --bg-deep:#06112a;
-      --panel:rgba(255,255,255,.05);
-      --panel-strong:rgba(255,255,255,.07);
+      --bg:#03050a;
+      --bg-2:#07122a;
+      --panel:rgba(255,255,255,.045);
+      --panel-2:rgba(255,255,255,.06);
       --line:rgba(255,255,255,.08);
       --text:#f7f8fc;
-      --muted:#bcc7df;
-      --muted-strong:#dbe2f2;
-      --gold:#d4b05d;
-      --gold-soft:#f2df9b;
+      --muted:#bcc7de;
+      --muted-2:#dde4f2;
+      --gold:#d6b360;
+      --gold-soft:#f4e1a2;
       --green:#25D366;
       --green-deep:#169448;
-      --crimson:#5a1c0f;
-      --crimson-soft:#8d351d;
-      --blue:#234db8;
-      --shadow:0 28px 90px rgba(0,0,0,.42);
+      --wine:#5b180e;
+      --wine-2:#7c2413;
+      --blue:#1f47aa;
+      --shadow:0 28px 80px rgba(0,0,0,.42);
       --radius:34px;
-      --max:1220px;
+      --max:1240px;
     }
 
     *{box-sizing:border-box}
@@ -39,10 +39,10 @@
       font-family:Inter, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 8% 8%, rgba(212,176,93,.14), transparent 20%),
-        radial-gradient(circle at 88% 14%, rgba(35,77,184,.20), transparent 22%),
-        radial-gradient(circle at 52% 120%, rgba(37,211,102,.08), transparent 20%),
-        linear-gradient(180deg,#010207 0%, #041128 42%, #02040b 100%);
+        radial-gradient(circle at 8% 8%, rgba(214,179,96,.14), transparent 22%),
+        radial-gradient(circle at 92% 12%, rgba(31,71,170,.22), transparent 24%),
+        radial-gradient(circle at 85% 90%, rgba(37,211,102,.08), transparent 18%),
+        linear-gradient(180deg,#020309 0%, #061127 42%, #02040a 100%);
       overflow-x:hidden;
     }
 
@@ -52,61 +52,61 @@
       inset:0;
       z-index:0;
       pointer-events:none;
-      opacity:.16;
+      opacity:.14;
       background:
         repeating-linear-gradient(
           to bottom,
-          rgba(255,255,255,.010) 0px,
-          rgba(255,255,255,.010) 1px,
+          rgba(255,255,255,.01) 0px,
+          rgba(255,255,255,.01) 1px,
           transparent 2px,
           transparent 4px
         );
     }
 
-    .cinema-bg{
+    .bgfx{
       position:fixed;
       inset:0;
-      pointer-events:none;
       z-index:0;
+      pointer-events:none;
       overflow:hidden;
     }
 
-    .glow{
+    .orb{
       position:absolute;
       border-radius:50%;
       filter:blur(110px);
-      opacity:.16;
-      animation:drift 16s ease-in-out infinite;
+      opacity:.15;
+      animation:floaty 16s ease-in-out infinite;
     }
 
-    .glow.g1{
+    .orb.o1{
       width:320px;height:320px;
-      left:-80px;top:-70px;
-      background:rgba(212,176,93,.95);
+      left:-90px;top:-70px;
+      background:rgba(214,179,96,.9);
     }
 
-    .glow.g2{
+    .orb.o2{
       width:380px;height:380px;
-      right:-120px;top:0;
-      background:rgba(35,77,184,.95);
+      right:-120px;top:20px;
+      background:rgba(31,71,170,.95);
       animation-delay:-5s;
     }
 
-    .glow.g3{
-      width:260px;height:260px;
-      right:18%;bottom:-80px;
-      background:rgba(37,211,102,.55);
+    .orb.o3{
+      width:280px;height:280px;
+      right:15%;bottom:-90px;
+      background:rgba(37,211,102,.45);
       opacity:.08;
       animation-delay:-9s;
     }
 
-    @keyframes drift{
-      0%,100%{transform:translateY(0) translateX(0) scale(1)}
-      50%{transform:translateY(18px) translateX(10px) scale(1.06)}
+    @keyframes floaty{
+      0%,100%{transform:translate(0,0) scale(1)}
+      50%{transform:translate(12px,16px) scale(1.05)}
     }
 
     .container{
-      width:min(calc(100% - 26px), var(--max));
+      width:min(calc(100% - 24px), var(--max));
       margin:0 auto;
       position:relative;
       z-index:2;
@@ -115,35 +115,33 @@
     .topbar{
       position:sticky;
       top:0;
-      z-index:90;
+      z-index:95;
       backdrop-filter:blur(18px);
-      background:rgba(4,8,18,.76);
+      background:rgba(4,8,18,.78);
       border-bottom:1px solid rgba(255,255,255,.05);
     }
 
     .topbar-inner{
-      width:min(calc(100% - 22px), var(--max));
+      width:min(calc(100% - 20px), var(--max));
       margin:0 auto;
       padding:14px 0;
       display:flex;
       align-items:center;
-      gap:15px;
+      gap:16px;
     }
 
     .logo{
-      width:82px;height:82px;
-      border-radius:26px;
+      width:84px;height:84px;
       flex:none;
+      border-radius:26px;
       display:grid;
       place-items:center;
-      font-size:33px;
+      font-size:34px;
       position:relative;
       overflow:hidden;
       background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.10);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.02),
-        0 18px 40px rgba(0,0,0,.34);
+      box-shadow:0 18px 40px rgba(0,0,0,.34);
     }
 
     .logo::after{
@@ -161,7 +159,7 @@
 
     .brand h1{
       margin:0;
-      font-size:clamp(1.95rem, 2.8vw, 3rem);
+      font-size:clamp(1.9rem, 2.8vw, 3rem);
       line-height:1;
       letter-spacing:-.06em;
       font-weight:950;
@@ -174,18 +172,16 @@
       line-height:1.35;
     }
 
-    .section{
-      padding:18px 0;
-    }
+    .section{padding:18px 0}
 
     .frame{
       border-radius:44px;
       padding:1px;
       background:
         linear-gradient(145deg,
-          rgba(212,176,93,.30),
-          rgba(255,255,255,.06) 24%,
-          rgba(35,77,184,.18) 78%,
+          rgba(214,179,96,.28),
+          rgba(255,255,255,.05) 24%,
+          rgba(31,71,170,.18) 78%,
           rgba(255,255,255,.02)
         );
       box-shadow:0 34px 95px rgba(0,0,0,.46);
@@ -196,9 +192,9 @@
       overflow:hidden;
       border-radius:43px;
       background:
-        radial-gradient(circle at 10% 10%, rgba(212,176,93,.09), transparent 20%),
-        radial-gradient(circle at 94% 20%, rgba(35,77,184,.18), transparent 24%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+        radial-gradient(circle at 10% 10%, rgba(214,179,96,.08), transparent 20%),
+        radial-gradient(circle at 92% 18%, rgba(31,71,170,.18), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.028));
       border:1px solid rgba(255,255,255,.05);
     }
 
@@ -207,16 +203,11 @@
       position:absolute;
       inset:0;
       pointer-events:none;
-      background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 18%, transparent 82%, rgba(255,255,255,.012));
+      background:linear-gradient(180deg, rgba(255,255,255,.018), transparent 18%, transparent 82%, rgba(255,255,255,.012));
     }
 
-    .hero{
-      padding:36px 0 10px;
-    }
-
-    .hero-panel{
-      padding:30px 22px 24px;
-    }
+    .hero{padding:18px 0 10px}
+    .hero-panel{padding:30px 22px 24px}
 
     .pill{
       display:inline-flex;
@@ -224,7 +215,7 @@
       gap:10px;
       padding:12px 18px;
       border-radius:999px;
-      border:1px solid rgba(212,176,93,.24);
+      border:1px solid rgba(214,179,96,.22);
       background:rgba(255,255,255,.03);
       color:var(--gold-soft);
       font-size:.84rem;
@@ -237,7 +228,7 @@
     .hero-title{
       margin:0;
       max-width:1020px;
-      font-size:clamp(2.9rem, 6vw, 6.2rem);
+      font-size:clamp(2.9rem, 6vw, 6.1rem);
       line-height:.90;
       letter-spacing:-.09em;
       font-weight:950;
@@ -246,8 +237,8 @@
 
     .hero-sub{
       margin:18px 0 0;
-      max-width:860px;
-      color:var(--muted-strong);
+      max-width:900px;
+      color:var(--muted-2);
       font-size:1.08rem;
       line-height:1.9;
     }
@@ -270,7 +261,7 @@
       text-decoration:none;
       font-weight:900;
       white-space:nowrap;
-      transition:transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+      transition:transform .25s ease, box-shadow .25s ease;
       border:1px solid transparent;
     }
 
@@ -278,12 +269,12 @@
 
     .btn-gold{
       color:#171717;
-      background:linear-gradient(180deg,#f4e8b4 0%, #d4b05d 100%);
-      box-shadow:0 18px 36px rgba(212,176,93,.24);
+      background:linear-gradient(180deg,#f4e8b4 0%, #d6b360 100%);
+      box-shadow:0 18px 36px rgba(214,179,96,.24);
     }
 
     .btn-dark{
-      color:#fff;
+      color:#ffe88f;
       background:rgba(255,255,255,.04);
       border-color:rgba(255,255,255,.08);
       box-shadow:var(--shadow);
@@ -297,7 +288,7 @@
 
     .hero-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:14px;
       margin-top:22px;
     }
@@ -322,9 +313,7 @@
       line-height:1.65;
     }
 
-    .section-head{
-      margin-bottom:16px;
-    }
+    .section-head{margin-bottom:16px}
 
     .eyebrow{
       display:inline-block;
@@ -345,17 +334,13 @@
 
     .section-desc{
       margin:0;
-      max-width:880px;
+      max-width:920px;
       color:var(--muted);
       line-height:1.85;
       font-size:1rem;
     }
 
-    .grid{
-      display:grid;
-      gap:16px;
-    }
-
+    .grid{display:grid;gap:16px}
     .grid-3{grid-template-columns:repeat(3,1fr)}
     .grid-2{grid-template-columns:repeat(2,1fr)}
 
@@ -364,9 +349,9 @@
       padding:1px;
       background:
         linear-gradient(145deg,
-          rgba(212,176,93,.22),
+          rgba(214,179,96,.20),
           rgba(255,255,255,.04) 28%,
-          rgba(35,77,184,.10) 80%,
+          rgba(31,71,170,.10) 80%,
           rgba(255,255,255,.02)
         );
       box-shadow:0 18px 42px rgba(0,0,0,.30);
@@ -377,8 +362,8 @@
       border-radius:29px;
       padding:22px 18px;
       background:
-        radial-gradient(circle at 88% 86%, rgba(212,176,93,.06), transparent 18%),
-        linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.028));
+        radial-gradient(circle at 88% 86%, rgba(214,179,96,.05), transparent 18%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
       border:1px solid rgba(255,255,255,.05);
     }
 
@@ -406,9 +391,7 @@
       font-size:.97rem;
     }
 
-    .feature-panel{
-      padding:24px 20px;
-    }
+    .feature-panel{padding:24px 20px}
 
     .feature-title{
       margin:0 0 10px;
@@ -419,13 +402,13 @@
 
     .feature-text{
       margin:0;
-      color:var(--muted-strong);
+      color:var(--muted-2);
       line-height:1.85;
     }
 
     .mini-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:14px;
       margin-top:18px;
     }
@@ -452,7 +435,7 @@
     .cta-panel{
       padding:24px 20px;
       display:grid;
-      grid-template-columns:1.14fr .86fr;
+      grid-template-columns:1.15fr .85fr;
       gap:16px;
       align-items:center;
     }
@@ -466,7 +449,7 @@
 
     .cta-text{
       margin:0;
-      color:var(--muted-strong);
+      color:var(--muted-2);
       line-height:1.85;
     }
 
@@ -477,10 +460,10 @@
       margin-top:16px;
     }
 
-    .btn-crimson{
+    .btn-wine{
       color:#ffe68d;
-      background:linear-gradient(180deg, #6f2412 0%, #4a160d 100%);
-      box-shadow:0 18px 34px rgba(90,28,15,.25);
+      background:linear-gradient(180deg, #6d2412 0%, #4d170d 100%);
+      box-shadow:0 18px 34px rgba(91,24,14,.25);
     }
 
     .contact-list{
@@ -550,25 +533,27 @@
       transform:translateY(0) scale(1);
     }
 
+    @media (max-width:1100px){
+      .hero-grid{grid-template-columns:repeat(2,1fr)}
+      .mini-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
     @media (max-width:980px){
       .grid-3{grid-template-columns:1fr 1fr}
-      .hero-grid{grid-template-columns:1fr}
-      .mini-grid{grid-template-columns:1fr}
       .cta-panel{grid-template-columns:1fr}
     }
 
     @media (max-width:720px){
       .topbar-inner{padding:12px 0}
-      .logo{width:70px;height:70px;font-size:28px;border-radius:22px}
-      .brand h1{font-size:1.74rem}
+      .logo{width:72px;height:72px;font-size:29px;border-radius:22px}
+      .brand h1{font-size:1.78rem}
       .brand p{font-size:.97rem}
-      .hero{padding-top:28px}
+      .hero-panel,.feature-panel,.cta-panel{padding:22px 17px}
       .frame{border-radius:30px}
       .panel{border-radius:29px}
-      .hero-panel,.feature-panel,.cta-panel{padding:22px 17px}
       .hero-title{font-size:2.65rem}
       .hero-sub{font-size:1rem}
-      .grid-3,.grid-2{grid-template-columns:1fr}
+      .grid-3,.grid-2,.hero-grid,.mini-grid{grid-template-columns:1fr}
       .btn{width:100%}
       .float-wa{
         right:14px;
@@ -581,10 +566,10 @@
 </head>
 <body>
 
-  <div class="cinema-bg">
-    <div class="glow g1"></div>
-    <div class="glow g2"></div>
-    <div class="glow g3"></div>
+  <div class="bgfx">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
   </div>
 
   <header class="topbar">
@@ -602,20 +587,20 @@
       <div class="container">
         <div class="frame reveal show">
           <div class="panel hero-panel">
-            <div class="pill">🎖️ Cinema Pro 8 • Palco Presidencial Absoluto</div>
+            <div class="pill">🎖️ Cinema Pro 9 • Estado Maior Presidencial</div>
 
             <h2 class="hero-title">
-              Presença presidencial absoluta, autoridade executiva e sofisticação institucional de palco máximo.
+              Presença de Estado Maior, autoridade executiva superior e comando institucional com impacto máximo.
             </h2>
 
             <p class="hero-sub">
-              Uma composição visual criada para comunicar liderança, prestígio,
-              consistência, clareza estratégica e força institucional com leitura
-              imediata de alto valor e acabamento premium absoluto.
+              Uma plataforma visual e estratégica pensada para comunicar liderança,
+              preparo técnico, refinamento institucional, visão executiva e alto valor
+              percebido com leitura imediata de credibilidade e comando.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-gold" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20solicitar%20uma%20proposta%20institucional%20premium." target="_blank">Solicitar proposta presidencial</a>
+              <a class="btn btn-gold" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20solicitar%20uma%20proposta%20de%20alto%20n%C3%ADvel." target="_blank">Solicitar proposta de Estado Maior</a>
               <a class="btn btn-dark" href="#destaque">Ver destaque estratégico</a>
               <a class="btn btn-wa" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20institucional." target="_blank">WhatsApp</a>
             </div>
@@ -631,7 +616,11 @@
               </div>
               <div class="hero-box">
                 <strong>Canal de conversão</strong>
-                <span>Estrutura pronta para propostas, diagnósticos, reuniões e posicionamento premium.</span>
+                <span>Estrutura pronta para propostas, diagnósticos, reuniões e atuação premium.</span>
+              </div>
+              <div class="hero-box">
+                <strong>Prestígio visual</strong>
+                <span>Estética nobre para reforçar confiança, sofisticação e posicionamento superior.</span>
               </div>
             </div>
           </div>
@@ -644,26 +633,29 @@
         <div class="frame reveal">
           <div class="panel feature-panel">
             <div class="eyebrow">Destaque Estratégico</div>
-            <h2 class="feature-title">Uma presença pensada para impacto, prestígio e autoridade real</h2>
+            <h2 class="feature-title">Uma presença desenhada para autoridade, clareza e alto padrão executivo</h2>
             <p class="feature-text">
-              Este modelo foi desenhado para unir refinamento visual,
-              força executiva, objetividade institucional e linguagem premium,
-              produzindo uma percepção imediata de preparo, confiança,
-              sofisticação e diferenciação.
+              Este modelo foi concebido para unir impacto visual, linguagem institucional,
+              refinamento contemporâneo, objetividade estratégica e leitura premium de comando,
+              fortalecendo reputação, valor percebido e diferenciação.
             </p>
 
             <div class="mini-grid">
               <div class="mini">
-                <strong>Visual presidencial</strong>
-                <span>Estética mais imponente, limpa e nobre, com leitura de palco principal.</span>
+                <strong>Visual de Estado</strong>
+                <span>Estética mais imponente, limpa e sofisticada, com leitura de autoridade superior.</span>
               </div>
               <div class="mini">
-                <strong>Mensagem superior</strong>
-                <span>Texto forte e claro para públicos institucionais, executivos e estratégicos.</span>
+                <strong>Mensagem firme</strong>
+                <span>Texto executivo claro para públicos institucionais, profissionais e estratégicos.</span>
               </div>
               <div class="mini">
-                <strong>Valor percebido</strong>
-                <span>Estrutura preparada para elevar reputação, credibilidade e posicionamento.</span>
+                <strong>Valor ampliado</strong>
+                <span>Estrutura preparada para elevar credibilidade, percepção de nível e confiança.</span>
+              </div>
+              <div class="mini">
+                <strong>Presença memorável</strong>
+                <span>Assinatura visual criada para marcar posição com elegância e força.</span>
               </div>
             </div>
           </div>
@@ -675,12 +667,11 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Autoridade e Trajetória</div>
-          <h2 class="section-title">Base profissional sólida com linguagem institucional contemporânea</h2>
+          <h2 class="section-title">Base profissional sólida com leitura contemporânea de alto nível</h2>
           <p class="section-desc">
-            Uma trajetória construída a partir de experiência técnica,
-            gestão pública, gestão financeira, leitura organizacional,
-            curadoria estratégica, inovação aplicada e capacidade real
-            de transformar conhecimento em posicionamento e presença digital.
+            Uma trajetória que integra experiência técnica, atuação pública,
+            gestão, curadoria, organização institucional, comunicação estratégica,
+            inovação aplicada e capacidade real de transformar conhecimento em posicionamento.
           </p>
         </div>
 
@@ -691,29 +682,29 @@
               <h3>Contabilidade, gestão e inteligência institucional</h3>
               <p>
                 Atuação conectando gestão financeira, contabilidade,
-                curadoria executiva, organização e leitura institucional.
+                leitura organizacional, curadoria executiva e direção estratégica.
               </p>
             </div>
           </div>
 
           <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">🧠 Curadoria estratégica</div>
-              <h3>Inovação, posicionamento e presença premium</h3>
+              <div class="tag">🧠 Leitura estratégica</div>
+              <h3>Curadoria, inovação e visão de posicionamento</h3>
               <p>
                 Integração entre comunicação, estratégia, curadoria,
-                IA e visão contemporânea para fortalecer autoridade.
+                IA e construção de presença institucional premium.
               </p>
             </div>
           </div>
 
           <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">📈 Valor institucional</div>
-              <h3>Imagem preparada para oportunidades superiores</h3>
+              <div class="tag">📈 Valor percebido</div>
+              <h3>Imagem preparada para oportunidades maiores</h3>
               <p>
                 Estrutura voltada a ampliar confiança, reconhecimento,
-                sofisticação e percepção de alto valor profissional.
+                autoridade e diferenciação no ambiente digital.
               </p>
             </div>
           </div>
@@ -725,21 +716,21 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Projetos Estratégicos</div>
-          <h2 class="section-title">Frentes conectadas a presença, estrutura, inovação e transformação</h2>
+          <h2 class="section-title">Frentes conectadas a presença, estrutura, curadoria e transformação</h2>
           <p class="section-desc">
             Ambientes de atuação voltados ao fortalecimento institucional,
-            organização, curadoria, inovação aplicada e posicionamento digital de alto padrão.
+            posicionamento digital, narrativa de valor e inovação aplicada.
           </p>
         </div>
 
         <div class="grid grid-2">
           <div class="card-frame reveal">
             <div class="card">
-              <div class="tag">💼 Posicionamento Premium</div>
-              <h3>Presença institucional de alto impacto</h3>
+              <div class="tag">💼 Presença premium</div>
+              <h3>Imagem institucional de alto impacto</h3>
               <p>
                 Estrutura visual e narrativa pensada para ampliar autoridade,
-                refinamento, solidez e leitura executiva.
+                sofisticação, leitura executiva e confiança.
               </p>
             </div>
           </div>
@@ -761,7 +752,7 @@
               <h3>Território, ecossistema e narrativa de valor</h3>
               <p>
                 Conexão entre patrimônio, turismo, inovação, identidade territorial
-                e comunicação institucional de padrão elevado.
+                e presença institucional de padrão elevado.
               </p>
             </div>
           </div>
@@ -772,7 +763,7 @@
               <h3>Clareza, direção e formato de atuação</h3>
               <p>
                 Organização de prioridades, escopo, canais e presença institucional
-                com método, leitura estratégica e alta sofisticação visual.
+                com método, leitura estratégica e acabamento premium.
               </p>
             </div>
           </div>
@@ -787,7 +778,7 @@
           <h2 class="section-title">Modelos de atuação para demandas institucionais e executivas</h2>
           <p class="section-desc">
             Formatos voltados a diagnóstico, consultoria, implantação assistida
-            e construção de presença digital com acabamento premium.
+            e fortalecimento da presença digital com linguagem premium.
           </p>
         </div>
 
@@ -840,7 +831,7 @@
               </p>
 
               <div class="cta-actions">
-                <a class="btn btn-crimson" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20conversa%20executiva%20inicial." target="_blank">Agendar conversa</a>
+                <a class="btn btn-wine" href="https://wa.me/5565984091524?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20conversa%20executiva%20inicial." target="_blank">Agendar conversa</a>
                 <a class="btn btn-dark" href="mailto:antoniodecioferreiracoelho@gmail.com">Enviar e-mail</a>
               </div>
             </div>
@@ -892,4 +883,4 @@
     });
   </script>
 </body>
-  </html>
+              </html>
