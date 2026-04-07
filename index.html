@@ -4,14 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Décio Coelho • Viracopos Global</title>
+  <meta
+    name="description"
+    content="Viracopos Global • Centro de Inteligência Profissional Digital • plataforma institucional premium, ecossistema estratégico, IA aplicada, curadoria executiva e posicionamento de alto valor."
+  />
 
   <style>
     :root{
       --bg:#030712;
       --bg2:#06122a;
+      --bg3:#081935;
       --panel:rgba(7,16,34,.82);
       --panel-strong:rgba(10,22,46,.92);
       --line:rgba(255,215,120,.18);
+      --line-soft:rgba(255,255,255,.07);
       --gold:#f0d57a;
       --gold-strong:#d9a62b;
       --text:#f6f7fb;
@@ -20,11 +26,12 @@
       --green:#16b33f;
       --green2:#1fd857;
       --red:#7c130b;
+      --red2:#a31b0f;
       --shadow:0 20px 60px rgba(0,0,0,.40);
       --glow:0 0 30px rgba(240,213,122,.10), 0 0 60px rgba(52,110,255,.08);
       --radius:28px;
       --radius-sm:20px;
-      --max:1100px;
+      --max:1180px;
     }
 
     *{
@@ -49,6 +56,7 @@
       min-height:100vh;
       line-height:1.45;
       overflow-x:hidden;
+      padding-top:86px;
     }
 
     body::before{
@@ -61,82 +69,115 @@
       background-size:100% 4px;
       opacity:.10;
       mix-blend-mode:soft-light;
+      z-index:0;
     }
 
     .container{
       width:min(92%, var(--max));
       margin:0 auto;
+      position:relative;
+      z-index:2;
     }
 
-    .topbar{
-      position:sticky;
+    .menu{
+      position:fixed;
       top:0;
-      z-index:100;
-      backdrop-filter:blur(16px);
-      background:linear-gradient(180deg, rgba(2,8,20,.92), rgba(2,8,20,.72));
-      border-bottom:1px solid rgba(255,255,255,.05);
+      left:0;
+      width:100%;
+      z-index:999;
+      transition:all .35s ease;
+      background:rgba(3,8,20,.22);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,215,0,.08);
     }
 
-    .topbar-inner{
+    .menu.scrolled{
+      background:rgba(5,10,24,.92);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,215,120,.18);
+      box-shadow:0 12px 40px rgba(0,0,0,.35);
+    }
+
+    .menu-container{
+      max-width:1200px;
+      margin:auto;
+      padding:14px 20px;
       display:flex;
       align-items:center;
+      justify-content:space-between;
       gap:16px;
-      padding:16px 0;
     }
 
-    .avatar{
-      width:84px;
-      height:84px;
-      border-radius:24px;
-      object-fit:cover;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:
-        0 0 0 1px rgba(255,215,122,.10) inset,
-        0 10px 30px rgba(0,0,0,.35),
-        0 0 30px rgba(240,213,122,.08);
-      background:#09111f;
-    }
-
-    .brand h1{
-      font-size:clamp(26px, 5vw, 56px);
-      line-height:1;
-      letter-spacing:-1px;
+    .menu .logo{
+      color:var(--gold);
       font-weight:800;
-      margin-bottom:8px;
-      text-shadow:0 2px 18px rgba(255,255,255,.05);
+      letter-spacing:.4px;
+      font-size:18px;
+      white-space:nowrap;
     }
 
-    .brand p{
-      color:var(--muted);
-      font-size:clamp(14px, 2.2vw, 28px);
-      max-width:900px;
+    .menu-nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      justify-content:flex-end;
+    }
+
+    .menu-nav a{
+      color:#f5f7ff;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      opacity:.88;
+      transition:all .25s ease;
+    }
+
+    .menu-nav a:hover{
+      color:var(--gold);
+      opacity:1;
     }
 
     .hero{
-      padding:34px 0 18px;
+      padding:36px 0 20px;
     }
 
-    .hero-card{
+    .hero-card,
+    .mini-card,
+    .card,
+    .gallery figure,
+    .investidor-copy,
+    .cta-card,
+    .contact-box{
       position:relative;
       overflow:hidden;
-      background:
-        linear-gradient(180deg, rgba(18,12,16,.55), rgba(5,16,44,.82)),
-        rgba(9,17,33,.84);
+      background:linear-gradient(180deg, rgba(7,12,28,.88), rgba(4,9,20,.96));
       border:1px solid rgba(255,255,255,.06);
-      border-radius:34px;
-      box-shadow:var(--shadow), var(--glow);
-      padding:22px;
+      border-radius:28px;
+      box-shadow:0 12px 34px rgba(0,0,0,.24);
     }
 
-    .hero-card::before{
+    .hero-card::before,
+    .mini-card::before,
+    .card::before,
+    .gallery figure::before,
+    .investidor-copy::before,
+    .cta-card::before,
+    .contact-box::before{
       content:"";
       position:absolute;
       inset:0;
       pointer-events:none;
       background:
-        radial-gradient(circle at 20% 0%, rgba(240,213,122,.12), transparent 24%),
-        radial-gradient(circle at 100% 30%, rgba(48,111,255,.14), transparent 28%),
-        linear-gradient(90deg, transparent, rgba(255,255,255,.025), transparent);
+        radial-gradient(circle at 18% 12%, rgba(241, 211, 122, 0.10), transparent 20%),
+        radial-gradient(circle at 78% 75%, rgba(37, 211, 102, 0.06), transparent 16%),
+        linear-gradient(180deg, transparent, rgba(255,255,255,0.01));
+    }
+
+    .hero-card{
+      padding:24px;
+      box-shadow:var(--shadow), var(--glow);
     }
 
     .badge{
@@ -153,6 +194,8 @@
       font-size:14px;
       margin-bottom:22px;
       box-shadow:0 0 24px rgba(240,213,122,.06);
+      position:relative;
+      z-index:1;
     }
 
     .hero-grid{
@@ -160,42 +203,48 @@
       grid-template-columns:1.15fr .85fr;
       gap:24px;
       align-items:start;
+      position:relative;
+      z-index:1;
     }
 
-    .hero-copy h2{
+    .hero-copy h1{
       font-size:clamp(40px, 8vw, 92px);
       line-height:.95;
       letter-spacing:-2.4px;
       font-weight:900;
       margin-bottom:20px;
+      max-width:12ch;
     }
 
     .hero-copy p{
-      color:var(--muted);
+      color:#d6dcf2;
       font-size:clamp(18px, 2.4vw, 24px);
       max-width:760px;
       margin-bottom:26px;
     }
 
-    .hero-actions{
+    .hero-actions,
+    .cta-actions{
       display:flex;
       flex-wrap:wrap;
       gap:14px;
+      margin-top:20px;
     }
 
     .btn{
       display:inline-flex;
       justify-content:center;
       align-items:center;
-      min-height:64px;
-      padding:0 28px;
+      min-height:62px;
+      padding:0 24px;
       border-radius:999px;
       text-decoration:none;
       font-weight:800;
       font-size:clamp(16px, 2vw, 22px);
-      transition:transform .28s ease, box-shadow .28s ease, opacity .28s ease, filter .28s ease;
+      transition:transform .28s ease, box-shadow .28s ease, filter .28s ease;
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 12px 30px rgba(0,0,0,.25);
+      box-shadow:0 8px 24px rgba(0,0,0,.25);
+      text-align:center;
     }
 
     .btn:hover{
@@ -206,7 +255,7 @@
     .btn-gold{
       background:linear-gradient(180deg, #a8240a 0%, #7b160c 100%);
       color:#ffe870;
-      box-shadow:0 14px 34px rgba(122, 22, 10, .34);
+      box-shadow:0 14px 34px rgba(122,22,10,.34);
     }
 
     .btn-dark{
@@ -216,8 +265,14 @@
 
     .btn-green{
       background:linear-gradient(180deg, #0e8e22 0%, #11b533 100%);
-      color:#ffe870;
+      color:#fff3a2;
       box-shadow:0 14px 34px rgba(13,160,47,.28);
+    }
+
+    .btn-wine{
+      background:linear-gradient(180deg, #8d1209 0%, #650903 100%);
+      color:#ffe67d;
+      box-shadow:0 14px 34px rgba(110,8,0,.28);
     }
 
     .side-panel{
@@ -226,25 +281,27 @@
     }
 
     .mini-card{
-      background:linear-gradient(180deg, rgba(7,12,28,.88), rgba(4,9,20,.94));
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:24px;
       padding:22px;
-      box-shadow:0 10px 30px rgba(0,0,0,.20);
     }
 
     .mini-card h3{
       font-size:clamp(22px, 2vw, 28px);
       margin-bottom:10px;
+      position:relative;
+      z-index:1;
     }
 
     .mini-card p{
       color:var(--muted);
       font-size:18px;
+      position:relative;
+      z-index:1;
     }
 
     section{
-      padding:20px 0 8px;
+      padding:22px 0 8px;
+      position:relative;
+      z-index:1;
     }
 
     .section-label{
@@ -262,7 +319,7 @@
       letter-spacing:-1.8px;
       font-weight:900;
       margin-bottom:18px;
-      max-width:900px;
+      max-width:15ch;
     }
 
     .section-text{
@@ -270,6 +327,7 @@
       font-size:clamp(18px, 2.2vw, 24px);
       max-width:920px;
       margin-bottom:24px;
+      line-height:1.75;
     }
 
     .cards{
@@ -279,11 +337,7 @@
     }
 
     .card{
-      background:linear-gradient(180deg, rgba(7,12,28,.88), rgba(4,9,20,.96));
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:28px;
       padding:24px;
-      box-shadow:0 10px 30px rgba(0,0,0,.22);
       transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
     }
 
@@ -297,11 +351,29 @@
       font-size:clamp(24px, 2.5vw, 30px);
       margin-bottom:12px;
       line-height:1.05;
+      position:relative;
+      z-index:1;
     }
 
     .card p{
       color:var(--muted);
       font-size:clamp(17px, 1.8vw, 21px);
+      position:relative;
+      z-index:1;
+    }
+
+    .tag{
+      display:inline-block;
+      margin-bottom:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(240,213,122,.18);
+      color:var(--gold);
+      font-weight:800;
+      font-size:14px;
+      background:rgba(255,255,255,.03);
+      position:relative;
+      z-index:1;
     }
 
     .gallery{
@@ -312,12 +384,7 @@
     }
 
     .gallery figure{
-      background:linear-gradient(180deg, rgba(8,12,28,.84), rgba(3,8,20,.94));
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:28px;
       padding:14px;
-      box-shadow:0 14px 34px rgba(0,0,0,.22);
-      overflow:hidden;
       transition:transform .28s ease, box-shadow .28s ease;
     }
 
@@ -332,12 +399,87 @@
       border-radius:20px;
       border:1px solid rgba(255,255,255,.05);
       box-shadow:0 12px 32px rgba(0,0,0,.28);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
     }
 
     .gallery figcaption{
       padding:14px 6px 4px;
       color:var(--muted);
       font-size:17px;
+      line-height:1.6;
+      position:relative;
+      z-index:1;
+    }
+
+    .investidor{
+      padding-top:26px;
+    }
+
+    .investidor-box{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    .investidor-copy,
+    .cta-card{
+      padding:24px;
+    }
+
+    .investidor-copy h3,
+    .cta-card h3{
+      font-size:clamp(26px, 3vw, 36px);
+      margin-bottom:16px;
+      line-height:1.05;
+      position:relative;
+      z-index:1;
+    }
+
+    .investidor-lista{
+      display:grid;
+      gap:14px;
+      position:relative;
+      z-index:1;
+    }
+
+    .investidor-item{
+      padding:16px 18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.025);
+      border:1px solid rgba(255,255,255,.05);
+      color:#d6dced;
+      font-size:18px;
+      line-height:1.6;
+    }
+
+    .cta-mini{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(240,213,122,.20);
+      color:#f0d57a;
+      background:rgba(8,12,28,.5);
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.5px;
+      position:relative;
+      z-index:1;
+    }
+
+    .cta-card p{
+      color:#c6cede;
+      font-size:18px;
+      margin-bottom:18px;
+      line-height:1.75;
+      position:relative;
+      z-index:1;
+    }
+
+    .cta-card .btn{
+      width:100%;
+      margin-top:12px;
     }
 
     .contact-grid{
@@ -347,16 +489,23 @@
     }
 
     .contact-box{
-      background:linear-gradient(180deg, rgba(7,12,28,.88), rgba(4,9,20,.96));
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:28px;
       padding:24px;
-      box-shadow:0 12px 34px rgba(0,0,0,.24);
     }
 
     .contact-box h3{
       font-size:clamp(24px, 3vw, 34px);
       margin-bottom:14px;
+      line-height:1.05;
+      position:relative;
+      z-index:1;
+    }
+
+    .contact-box p{
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.75;
+      position:relative;
+      z-index:1;
     }
 
     .contact-line{
@@ -365,6 +514,8 @@
       border-radius:20px;
       padding:18px;
       margin-top:12px;
+      position:relative;
+      z-index:1;
     }
 
     .contact-line strong{
@@ -377,13 +528,19 @@
       color:var(--muted);
       font-size:18px;
       word-break:break-word;
+      line-height:1.6;
     }
 
     .footer{
-      padding:36px 0 80px;
+      padding:36px 0 94px;
       text-align:center;
       color:var(--soft);
       font-size:18px;
+      line-height:1.7;
+    }
+
+    .footer strong{
+      color:var(--text);
     }
 
     .float-wa{
@@ -407,33 +564,63 @@
       box-shadow:0 18px 42px rgba(0,0,0,.35), 0 0 50px rgba(17,204,79,.22);
     }
 
-    .reveal{
+    .reveal,
+    .reveal-left,
+    .reveal-right{
       opacity:0;
-      transform:translateY(24px) scale(.985);
-      transition:opacity .75s ease, transform .75s ease;
+      transition:opacity .8s ease, transform .8s ease;
+      will-change:opacity, transform;
     }
 
-    .reveal.show{
+    .reveal{
+      transform:translateY(32px);
+    }
+
+    .reveal-left{
+      transform:translateX(-34px);
+    }
+
+    .reveal-right{
+      transform:translateX(34px);
+    }
+
+    .reveal.show,
+    .reveal-left.show,
+    .reveal-right.show{
       opacity:1;
-      transform:translateY(0) scale(1);
+      transform:translate(0,0);
+    }
+
+    @media (max-width: 1100px){
+      .menu-nav{
+        gap:12px;
+      }
+
+      .hero-copy h1{
+        max-width:11ch;
+      }
     }
 
     @media (max-width: 980px){
       .hero-grid,
       .cards,
       .gallery,
+      .investidor-box,
       .contact-grid{
         grid-template-columns:1fr;
       }
 
-      .topbar-inner{
+      .menu-container{
+        flex-direction:column;
         align-items:flex-start;
       }
 
-      .avatar{
-        width:72px;
-        height:72px;
-        border-radius:22px;
+      .menu-nav{
+        justify-content:flex-start;
+      }
+
+      body{
+        padding-top:120px;
       }
 
       .hero-card{
@@ -452,29 +639,95 @@
         bottom:14px;
       }
     }
+
+    @media (max-width: 640px){
+      .container{
+        width:min(95%, var(--max));
+      }
+
+      .menu-container{
+        padding:12px 16px;
+      }
+
+      .menu .logo{
+        font-size:16px;
+      }
+
+      .menu-nav a{
+        font-size:13px;
+      }
+
+      .hero-card,
+      .mini-card,
+      .card,
+      .gallery figure,
+      .investidor-copy,
+      .cta-card,
+      .contact-box{
+        border-radius:24px;
+      }
+
+      .hero-card,
+      .mini-card,
+      .card,
+      .investidor-copy,
+      .cta-card,
+      .contact-box{
+        padding:18px;
+      }
+
+      .gallery figure{
+        padding:10px;
+      }
+
+      .badge{
+        font-size:12px;
+        padding:10px 14px;
+      }
+
+      .hero-copy h1{
+        max-width:none;
+      }
+
+      .float-wa{
+        left:12px;
+        right:12px;
+        bottom:12px;
+        min-width:auto;
+      }
+
+      .footer{
+        padding-bottom:90px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <img class="avatar" src="img/holograma-ecossistema-viracopos-global.png" alt="Décio Coelho">
-      <div class="brand">
-        <h1>Décio Coelho</h1>
-        <p>Viracopos Global • Centro de Inteligência Profissional Digital</p>
-      </div>
+  <header class="menu" id="menuExecutivo">
+    <div class="menu-container">
+      <div class="logo">Viracopos Global</div>
+      <nav class="menu-nav">
+        <a href="#inicio">Início</a>
+        <a href="#plataforma">Plataforma</a>
+        <a href="#arquitetura">Arquitetura</a>
+        <a href="#ecossistema">Ecossistema</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#investidor">Investidor</a>
+        <a href="#contato">Contato</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section id="inicio" class="hero reveal">
       <div class="container">
         <div class="hero-card reveal">
-          <div class="badge">🏛 HOLOGRAMA OFICIAL</div>
+          <div class="badge">🏛️ HOLOGRAMA OFICIAL • IMPÉRIO ESTRATÉGICO MAGNO</div>
 
           <div class="hero-grid">
             <div class="hero-copy">
-              <h2>Plataforma institucional premium com presença estratégica de alto valor.</h2>
+              <h1>Plataforma institucional premium com presença estratégica de alto valor.</h1>
               <p>
                 Ambiente digital pensado para articular autoridade, ecossistema,
                 inovação, inteligência institucional e canais executivos de relacionamento.
@@ -483,20 +736,20 @@
               <div class="hero-actions">
                 <a class="btn btn-gold" href="#contato">Solicitar proposta institucional</a>
                 <a class="btn btn-dark" href="#ecossistema">Ver ecossistema</a>
-                <a class="btn btn-green" href="https://wa.me/5565984091524" target="_blank">WhatsApp</a>
+                <a class="btn btn-green" href="https://wa.me/5565984091524?text=Olá,%20quero%20falar%20sobre%20uma%20demanda%20institucional." target="_blank" rel="noopener noreferrer">WhatsApp</a>
               </div>
             </div>
 
             <div class="side-panel">
-              <div class="mini-card">
+              <div class="mini-card reveal-right">
                 <h3>Plataforma mestra</h3>
                 <p>Estrutura preparada para representar autoridade, escala e visão estratégica ampla.</p>
               </div>
-              <div class="mini-card">
+              <div class="mini-card reveal-right">
                 <h3>Leitura institucional</h3>
                 <p>Conexão entre experiência, curadoria, IA e construção profissional.</p>
               </div>
-              <div class="mini-card">
+              <div class="mini-card reveal-right">
                 <h3>Canal de articulação</h3>
                 <p>Base pronta para propostas, apresentações, diagnósticos e integração de sistemas.</p>
               </div>
@@ -506,11 +759,73 @@
       </div>
     </section>
 
-    <section id="ecossistema">
+    <section id="plataforma" class="reveal-left">
       <div class="container">
-        <div class="section-label reveal">Ecossistema estratégico</div>
-        <h2 class="section-title reveal">Arquitetura holográfica do sistema Viracopos Global</h2>
-        <p class="section-text reveal">
+        <div class="section-label">Plataforma central</div>
+        <h2 class="section-title">Viracopos Global como centro nervoso de imagem, narrativa e articulação institucional.</h2>
+        <p class="section-text">
+          A plataforma foi concebida para reunir identidade visual, ecossistema holográfico,
+          autoridade executiva, canais de relacionamento e leitura estratégica de alto padrão.
+        </p>
+
+        <div class="cards">
+          <div class="card reveal">
+            <div class="tag">🌐 Plataforma institucional</div>
+            <h3>Base digital premium</h3>
+            <p>Ambiente desenhado para sustentar presença, reputação, comunicação institucional e expansão de frentes estratégicas.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="tag">💡 Núcleo de Inovação & IA Generativa</div>
+            <h3>Inteligência aplicada</h3>
+            <p>Conecta curadoria, automação, produção de valor, linguagem estratégica e evolução do ecossistema.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="tag">🧭 Direção executiva</div>
+            <h3>Canal de comando</h3>
+            <p>Estrutura pronta para propostas, reuniões, diagnósticos e encaminhamento institucional qualificado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="arquitetura" class="reveal-right">
+      <div class="container">
+        <div class="section-label">Arquitetura estratégica</div>
+        <h2 class="section-title">Uma presença concebida para organizar plataformas, linguagem, valor percebido e expansão.</h2>
+        <p class="section-text">
+          O site atua como base mestra do sistema, permitindo derivar páginas, PDFs, apresentações, hologramas,
+          materiais de investidor e comunicação institucional com unidade visual e consistência narrativa.
+        </p>
+
+        <div class="cards">
+          <div class="card reveal">
+            <div class="tag">🧩 Base mestra</div>
+            <h3>Estrutura replicável</h3>
+            <p>Preparada para novos módulos, agentes, apresentações, materiais institucionais e integrações futuras.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="tag">🎨 Linguagem premium</div>
+            <h3>Identidade visual coerente</h3>
+            <p>Ouro, azul, vidro e cinema pro formam um padrão visual proprietário e memorável.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="tag">🚀 Escalabilidade</div>
+            <h3>Expansão estratégica</h3>
+            <p>O mesmo núcleo visual pode sustentar novos sistemas, novos braços institucionais e novas ofertas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ecossistema" class="reveal">
+      <div class="container">
+        <div class="section-label">Ecossistema estratégico</div>
+        <h2 class="section-title">Arquitetura holográfica do sistema Viracopos Global</h2>
+        <p class="section-text">
           A base institucional se desdobra em plataformas e núcleos com identidade própria,
           linguagem visual integrada e leitura estratégica coerente.
         </p>
@@ -518,12 +833,12 @@
         <div class="gallery">
           <figure class="reveal">
             <img src="img/holograma-ecossistema-viracopos-global.png" alt="Ecossistema Viracopos Global">
-            <figcaption>Ecossistema Viracopos Global • visão central do sistema e suas integrações.</figcaption>
+            <figcaption>Ecossistema Viracopos Global • visão central do sistema, integrações e parcerias estratégicas.</figcaption>
           </figure>
 
           <figure class="reveal">
             <img src="img/holograma-sipf.png" alt="SIPF">
-            <figcaption>SIPF • inteligência financeira, leitura técnica e arquitetura estratégica.</figcaption>
+            <figcaption>SIPF • inteligência financeira, leitura técnica, perícia e arquitetura estratégica.</figcaption>
           </figure>
 
           <figure class="reveal">
@@ -533,58 +848,104 @@
 
           <figure class="reveal">
             <img src="img/holograma-rnp-viracopos.png" alt="RNP Viracopos">
-            <figcaption>RNP Viracopos • base territorial, patrimônio ambiental e ecoturismo.</figcaption>
+            <figcaption>RNP Viracopos • base territorial, patrimônio ambiental, sustentabilidade e ecoturismo.</figcaption>
           </figure>
 
           <figure class="reveal">
             <img src="img/holograma-evg.png" alt="EVG">
-            <figcaption>EVG • visão geral do ecossistema, fluxos, integrações e expansão.</figcaption>
+            <figcaption>EVG • visão geral do ecossistema, fluxos de dados, relações e expansão institucional.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="servicos" class="reveal">
       <div class="container">
-        <div class="section-label reveal">Presença digital, inteligência aplicada e execução institucional</div>
-        <h2 class="section-title reveal">O site pode funcionar como centro nervoso de imagem, narrativa, relacionamento, diagnóstico e articulação executiva.</h2>
-        <p class="section-text reveal">
-          Plataforma concebida para leitura de palco principal, presença digital elevada,
-          conexão entre experiência, curadoria, inovação aplicada e visão institucional.
+        <div class="section-label">Serviços e soluções</div>
+        <h2 class="section-title">Presença digital, inteligência aplicada e execução institucional</h2>
+        <p class="section-text">
+          A plataforma pode operar como centro nervoso de imagem, narrativa, relacionamento,
+          diagnóstico, consultoria, apresentação executiva e articulação institucional.
         </p>
 
         <div class="cards">
           <div class="card reveal">
-            <h3>📌 Núcleo de Inovação & IA Generativa</h3>
-            <p>Ativação conectando estrutura, autoridade, curadoria e inteligência aplicada ao negócio.</p>
+            <div class="tag">📌 Diagnóstico estratégico</div>
+            <h3>Leitura inicial da demanda</h3>
+            <p>Análise de contexto, necessidade, prioridade e escopo institucional para definição do melhor caminho de atuação.</p>
           </div>
 
           <div class="card reveal">
-            <h3>🌐 Plataforma Viracopos Global</h3>
-            <p>Base mestra com leitura de ecossistema para apresentar frentes SIPF, MVGC-9, RNP Viracopos, VGEO, Décio Coelho e demais ambientes estratégicos.</p>
+            <div class="tag">🤝 Consultoria por projeto</div>
+            <h3>Acompanhamento orientado a resultado</h3>
+            <p>Desenvolvimento estruturado para demandas específicas com direção executiva, clareza e posicionamento premium.</p>
           </div>
 
           <div class="card reveal">
-            <h3>🧭 Pilar do WhatsApp</h3>
-            <p>Canal institucional direto para diagnóstico, briefing, proposta e conversão executiva inicial.</p>
+            <div class="tag">⚙️ Implantação assistida</div>
+            <h3>Aplicação com apoio estratégico</h3>
+            <p>Execução apoiada em comunicação, presença institucional, organização de canais e fortalecimento de imagem.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contato">
+    <section id="investidor" class="investidor reveal">
       <div class="container">
-        <div class="section-label reveal">Próximo passo recomendado</div>
-        <h2 class="section-title reveal">Agendar uma conversa executiva inicial</h2>
-        <p class="section-text reveal">
+        <div class="section-label">Versão investidor</div>
+        <h2 class="section-title">Estrutura pronta para expansão, integração e ativos institucionais de alto valor.</h2>
+        <p class="section-text">
+          Plataforma preparada para apresentar visão estratégica, capacidade de articulação,
+          leitura executiva, ecossistema modular e potencial de crescimento com base em inovação,
+          turismo, inteligência institucional e presença digital premium.
+        </p>
+
+        <div class="investidor-box">
+          <div class="investidor-copy reveal-left">
+            <h3>Por que este ecossistema chama atenção</h3>
+
+            <div class="investidor-lista">
+              <div class="investidor-item">Autoridade institucional e leitura premium imediata.</div>
+              <div class="investidor-item">Arquitetura modular com múltiplas frentes estratégicas.</div>
+              <div class="investidor-item">Capacidade de integração com IA, plataformas e fluxos de dados.</div>
+              <div class="investidor-item">Base territorial, narrativa própria e identidade visual forte.</div>
+              <div class="investidor-item">Canal direto para propostas, parcerias e expansão.</div>
+            </div>
+          </div>
+
+          <div class="cta-card reveal-right">
+            <div class="cta-mini">Canal executivo prioritário</div>
+            <h3>Receber apresentação institucional para investidor</h3>
+            <p>
+              Acione o canal direto para alinhamento inicial, visão de projeto, possibilidades de parceria,
+              expansão digital e próximos passos estratégicos.
+            </p>
+
+            <a class="btn btn-gold" href="https://wa.me/5565984091524?text=Olá,%20gostaria%20de%20receber%20a%20apresentação%20institucional%20para%20investidor." target="_blank" rel="noopener noreferrer">
+              Solicitar apresentação para investidor
+            </a>
+
+            <a class="btn btn-dark" href="mailto:antoniodecioferreiracoelho@gmail.com?subject=Interesse%20institucional%20-%20versão%20investidor">
+              Enviar e-mail executivo
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="reveal">
+      <div class="container">
+        <div class="section-label">Próximo passo recomendado</div>
+        <h2 class="section-title">Agendar uma conversa executiva inicial</h2>
+        <p class="section-text">
           Um contato inicial permite alinhar contexto, prioridade, demanda, escopo,
           formato de atuação e proposta institucional personalizada.
         </p>
 
         <div class="contact-grid">
-          <div class="contact-box reveal">
-            <div class="hero-actions" style="margin-bottom:16px;">
-              <a class="btn btn-gold" href="https://wa.me/5565984091524" target="_blank">Agendar conversa</a>
+          <div class="contact-box reveal-left">
+            <div class="cta-actions" style="margin-top:0; margin-bottom:16px;">
+              <a class="btn btn-wine" href="https://wa.me/5565984091524?text=Olá,%20gostaria%20de%20agendar%20uma%20conversa%20executiva%20inicial." target="_blank" rel="noopener noreferrer">Agendar conversa</a>
               <a class="btn btn-dark" href="mailto:antoniodecioferreiracoelho@gmail.com">Enviar e-mail</a>
             </div>
 
@@ -604,9 +965,9 @@
             </div>
           </div>
 
-          <div class="contact-box reveal">
+          <div class="contact-box reveal-right">
             <h3>Base institucional ativa</h3>
-            <p style="color:var(--muted); font-size:18px;">
+            <p>
               Canal estruturado para apresentação executiva, integração de frentes,
               expansão do ecossistema e fortalecimento da presença digital.
             </p>
@@ -616,26 +977,42 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer reveal">
     <div class="container">
-      Décio Coelho • Viracopos Global • Centro de Inteligência Profissional Digital
+      <strong>Décio Coelho • Viracopos Global • Centro de Inteligência Profissional Digital</strong>
+      <div style="margin-top:10px;">Parcerias Estratégicas • Ecossistema Digital • Núcleo de Inovação 💡 & IA Generativa</div>
     </div>
   </footer>
 
-  <a class="float-wa" href="https://wa.me/5565984091524" target="_blank">💬 WhatsApp</a>
+  <a class="float-wa" href="https://wa.me/5565984091524?text=Olá,%20quero%20falar%20sobre%20uma%20demanda%20institucional." target="_blank" rel="noopener noreferrer">
+    💬 WhatsApp
+  </a>
 
   <script>
-    const reveals = document.querySelectorAll('.reveal');
+    const menuExecutivo = document.getElementById('menuExecutivo');
 
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach((entry)=>{
-        if(entry.isIntersecting){
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        menuExecutivo.classList.add('scrolled');
+      } else {
+        menuExecutivo.classList.remove('scrolled');
+      }
+    });
+
+    const elementosReveal = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
           entry.target.classList.add('show');
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.14 });
 
-    reveals.forEach((el)=>observer.observe(el));
+    elementosReveal.forEach((el, index) => {
+      el.style.transitionDelay = `${index * 0.04}s`;
+      observer.observe(el);
+    });
   </script>
 </body>
-</html>
+              </html>
