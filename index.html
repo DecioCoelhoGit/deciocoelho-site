@@ -4,178 +4,464 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Décio Coelho • Viracopos Global</title>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --bg:#030712;
+      --bg2:#06122a;
+      --panel:rgba(7,16,34,.82);
+      --panel-strong:rgba(10,22,46,.92);
+      --line:rgba(255,215,120,.18);
+      --gold:#f0d57a;
+      --gold-strong:#d9a62b;
+      --text:#f6f7fb;
+      --muted:#c6cede;
+      --soft:#91a0bb;
+      --green:#16b33f;
+      --green2:#1fd857;
+      --red:#7c130b;
+      --shadow:0 20px 60px rgba(0,0,0,.40);
+      --glow:0 0 30px rgba(240,213,122,.10), 0 0 60px rgba(52,110,255,.08);
+      --radius:28px;
+      --radius-sm:20px;
+      --max:1100px;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #020814, #04122a);
-      color: #fff;
-      line-height: 1.6;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .container {
-      width: 92%;
-      max-width: 1100px;
-      margin: 0 auto;
+    html{
+      scroll-behavior:smooth;
     }
 
-    .topbar {
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(4,10,24,0.95);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(212,164,52,.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(24,83,255,.12), transparent 28%),
+        radial-gradient(circle at bottom center, rgba(33,192,255,.07), transparent 25%),
+        linear-gradient(180deg, #030712 0%, #041126 38%, #020814 100%);
+      min-height:100vh;
+      line-height:1.45;
+      overflow-x:hidden;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size:100% 4px;
+      opacity:.10;
+      mix-blend-mode:soft-light;
     }
 
-    .brand img {
-      width: 72px;
-      height: 72px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 0 24px rgba(255, 215, 120, 0.18);
+    .container{
+      width:min(92%, var(--max));
+      margin:0 auto;
     }
 
-    .brand h1 {
-      font-size: 2rem;
-      margin-bottom: 4px;
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(16px);
+      background:linear-gradient(180deg, rgba(2,8,20,.92), rgba(2,8,20,.72));
+      border-bottom:1px solid rgba(255,255,255,.05);
     }
 
-    .brand p {
-      color: #b8c7e0;
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:16px 0;
     }
 
-    .hero {
-      padding: 56px 0 32px;
+    .avatar{
+      width:84px;
+      height:84px;
+      border-radius:24px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:
+        0 0 0 1px rgba(255,215,122,.10) inset,
+        0 10px 30px rgba(0,0,0,.35),
+        0 0 30px rgba(240,213,122,.08);
+      background:#09111f;
     }
 
-    .card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
+    .brand h1{
+      font-size:clamp(26px, 5vw, 56px);
+      line-height:1;
+      letter-spacing:-1px;
+      font-weight:800;
+      margin-bottom:8px;
+      text-shadow:0 2px 18px rgba(255,255,255,.05);
     }
 
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,215,120,0.28);
-      color: #f0d88a;
-      font-weight: bold;
-      letter-spacing: 0.04em;
+    .brand p{
+      color:var(--muted);
+      font-size:clamp(14px, 2.2vw, 28px);
+      max-width:900px;
     }
 
-    .hero h2 {
-      font-size: 3rem;
-      line-height: 1.02;
-      margin-bottom: 18px;
+    .hero{
+      padding:34px 0 18px;
     }
 
-    .hero p {
-      color: #c9d5ea;
-      font-size: 1.15rem;
-      margin-bottom: 22px;
+    .hero-card{
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(18,12,16,.55), rgba(5,16,44,.82)),
+        rgba(9,17,33,.84);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:34px;
+      box-shadow:var(--shadow), var(--glow);
+      padding:22px;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 20px;
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(240,213,122,.12), transparent 24%),
+        radial-gradient(circle at 100% 30%, rgba(48,111,255,.14), transparent 28%),
+        linear-gradient(90deg, transparent, rgba(255,255,255,.025), transparent);
     }
 
-    .btn {
-      display: inline-block;
-      padding: 16px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.25s;
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:999px;
+      border:1px solid rgba(240,213,122,.20);
+      color:var(--gold);
+      background:rgba(8,12,28,.52);
+      font-weight:800;
+      letter-spacing:.6px;
+      font-size:14px;
+      margin-bottom:22px;
+      box-shadow:0 0 24px rgba(240,213,122,.06);
     }
 
-    .btn-primary {
-      background: linear-gradient(90deg, #7a1200, #ae2a00);
-      color: #ffe16a;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:24px;
+      align-items:start;
     }
 
-    .btn-secondary {
-      background: rgba(255,255,255,0.04);
-      color: #ffe16a;
-      border: 1px solid rgba(255,255,255,0.1);
+    .hero-copy h2{
+      font-size:clamp(40px, 8vw, 92px);
+      line-height:.95;
+      letter-spacing:-2.4px;
+      font-weight:900;
+      margin-bottom:20px;
     }
 
-    .btn-whatsapp {
-      background: #0e8f22;
-      color: #fff;
+    .hero-copy p{
+      color:var(--muted);
+      font-size:clamp(18px, 2.4vw, 24px);
+      max-width:760px;
+      margin-bottom:26px;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
     }
 
-    .gallery {
-      padding: 22px 0 48px;
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      min-height:64px;
+      padding:0 28px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      font-size:clamp(16px, 2vw, 22px);
+      transition:transform .28s ease, box-shadow .28s ease, opacity .28s ease, filter .28s ease;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 12px 30px rgba(0,0,0,.25);
     }
 
-    .gallery-grid {
-      display: grid;
-      gap: 18px;
+    .btn:hover{
+      transform:translateY(-2px) scale(1.015);
+      filter:brightness(1.04);
     }
 
-    .gallery-grid img {
-      width: 100%;
-      display: block;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+    .btn-gold{
+      background:linear-gradient(180deg, #a8240a 0%, #7b160c 100%);
+      color:#ffe870;
+      box-shadow:0 14px 34px rgba(122, 22, 10, .34);
     }
 
-    .footer {
-      padding: 34px 0 60px;
-      color: #aebbd4;
-      text-align: center;
+    .btn-dark{
+      background:linear-gradient(180deg, rgba(8,12,30,.95), rgba(4,8,18,.98));
+      color:#ffe870;
     }
 
-    @media (max-width: 768px) {
-      .brand {
-        align-items: flex-start;
+    .btn-green{
+      background:linear-gradient(180deg, #0e8e22 0%, #11b533 100%);
+      color:#ffe870;
+      box-shadow:0 14px 34px rgba(13,160,47,.28);
+    }
+
+    .side-panel{
+      display:grid;
+      gap:14px;
+    }
+
+    .mini-card{
+      background:linear-gradient(180deg, rgba(7,12,28,.88), rgba(4,9,20,.94));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 10px 30px rgba(0,0,0,.20);
+    }
+
+    .mini-card h3{
+      font-size:clamp(22px, 2vw, 28px);
+      margin-bottom:10px;
+    }
+
+    .mini-card p{
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    section{
+      padding:20px 0 8px;
+    }
+
+    .section-label{
+      color:var(--gold);
+      font-size:clamp(14px, 2vw, 18px);
+      font-weight:900;
+      letter-spacing:1px;
+      margin-bottom:14px;
+      text-transform:uppercase;
+    }
+
+    .section-title{
+      font-size:clamp(34px, 6vw, 64px);
+      line-height:1;
+      letter-spacing:-1.8px;
+      font-weight:900;
+      margin-bottom:18px;
+      max-width:900px;
+    }
+
+    .section-text{
+      color:var(--muted);
+      font-size:clamp(18px, 2.2vw, 24px);
+      max-width:920px;
+      margin-bottom:24px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(7,12,28,.88), rgba(4,9,20,.96));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:0 10px 30px rgba(0,0,0,.22);
+      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 42px rgba(0,0,0,.30), 0 0 28px rgba(240,213,122,.07);
+      border-color:rgba(240,213,122,.16);
+    }
+
+    .card h3{
+      font-size:clamp(24px, 2.5vw, 30px);
+      margin-bottom:12px;
+      line-height:1.05;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:clamp(17px, 1.8vw, 21px);
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:22px;
+      margin-top:8px;
+    }
+
+    .gallery figure{
+      background:linear-gradient(180deg, rgba(8,12,28,.84), rgba(3,8,20,.94));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:28px;
+      padding:14px;
+      box-shadow:0 14px 34px rgba(0,0,0,.22);
+      overflow:hidden;
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+
+    .gallery figure:hover{
+      transform:translateY(-4px);
+      box-shadow:0 24px 44px rgba(0,0,0,.32), 0 0 30px rgba(240,213,122,.06);
+    }
+
+    .gallery img{
+      width:100%;
+      display:block;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.05);
+      box-shadow:0 12px 32px rgba(0,0,0,.28);
+    }
+
+    .gallery figcaption{
+      padding:14px 6px 4px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+    }
+
+    .contact-box{
+      background:linear-gradient(180deg, rgba(7,12,28,.88), rgba(4,9,20,.96));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:0 12px 34px rgba(0,0,0,.24);
+    }
+
+    .contact-box h3{
+      font-size:clamp(24px, 3vw, 34px);
+      margin-bottom:14px;
+    }
+
+    .contact-line{
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.05);
+      border-radius:20px;
+      padding:18px;
+      margin-top:12px;
+    }
+
+    .contact-line strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:22px;
+    }
+
+    .contact-line span{
+      color:var(--muted);
+      font-size:18px;
+      word-break:break-word;
+    }
+
+    .footer{
+      padding:36px 0 80px;
+      text-align:center;
+      color:var(--soft);
+      font-size:18px;
+    }
+
+    .float-wa{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:120;
+      min-width:200px;
+      min-height:72px;
+      padding:0 24px;
+      border-radius:999px;
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      text-decoration:none;
+      background:linear-gradient(180deg, #12b83c 0%, #16d956 100%);
+      color:#fff3a2;
+      font-weight:900;
+      font-size:clamp(18px, 2.2vw, 28px);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 18px 42px rgba(0,0,0,.35), 0 0 50px rgba(17,204,79,.22);
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px) scale(.985);
+      transition:opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0) scale(1);
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .cards,
+      .gallery,
+      .contact-grid{
+        grid-template-columns:1fr;
       }
 
-      .hero h2 {
-        font-size: 2.15rem;
+      .topbar-inner{
+        align-items:flex-start;
       }
 
-      .brand h1 {
-        font-size: 1.7rem;
+      .avatar{
+        width:72px;
+        height:72px;
+        border-radius:22px;
+      }
+
+      .hero-card{
+        padding:18px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .float-wa{
+        min-width:170px;
+        min-height:64px;
+        font-size:24px;
+        right:14px;
+        bottom:14px;
       }
     }
   </style>
 </head>
 <body>
+
   <header class="topbar">
-    <div class="container">
+    <div class="container topbar-inner">
+      <img class="avatar" src="img/holograma-ecossistema-viracopos-global.png" alt="Décio Coelho">
       <div class="brand">
-        <img src="img/holograma-ecossistema-viracopos-global.png" alt="Viracopos Global" />
-        <div>
-          <h1>Décio Coelho</h1>
-          <p>Viracopos Global • Centro de Inteligência Profissional Digital</p>
-        </div>
+        <h1>Décio Coelho</h1>
+        <p>Viracopos Global • Centro de Inteligência Profissional Digital</p>
       </div>
     </div>
   </header>
@@ -183,31 +469,148 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="card">
-          <span class="eyebrow">HOLOGRAMA OFICIAL</span>
-          <h2>Plataforma institucional premium com presença estratégica de alto valor.</h2>
-          <p>
-            Ambiente digital pensado para articular autoridade, ecossistema, inovação,
-            inteligência institucional e canais executivos de relacionamento.
-          </p>
+        <div class="hero-card reveal">
+          <div class="badge">🏛 HOLOGRAMA OFICIAL</div>
 
-          <div class="actions">
-            <a class="btn btn-primary" href="#">Solicitar proposta institucional</a>
-            <a class="btn btn-secondary" href="#ecosistema">Ver ecossistema</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/5565984091524" target="_blank">WhatsApp</a>
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <h2>Plataforma institucional premium com presença estratégica de alto valor.</h2>
+              <p>
+                Ambiente digital pensado para articular autoridade, ecossistema,
+                inovação, inteligência institucional e canais executivos de relacionamento.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn btn-gold" href="#contato">Solicitar proposta institucional</a>
+                <a class="btn btn-dark" href="#ecossistema">Ver ecossistema</a>
+                <a class="btn btn-green" href="https://wa.me/5565984091524" target="_blank">WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="side-panel">
+              <div class="mini-card">
+                <h3>Plataforma mestra</h3>
+                <p>Estrutura preparada para representar autoridade, escala e visão estratégica ampla.</p>
+              </div>
+              <div class="mini-card">
+                <h3>Leitura institucional</h3>
+                <p>Conexão entre experiência, curadoria, IA e construção profissional.</p>
+              </div>
+              <div class="mini-card">
+                <h3>Canal de articulação</h3>
+                <p>Base pronta para propostas, apresentações, diagnósticos e integração de sistemas.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="ecosistema" class="gallery">
+    <section id="ecossistema">
       <div class="container">
-        <div class="gallery-grid">
-          <img src="img/holograma-ecossistema-viracopos-global.png" alt="Ecossistema Viracopos Global" />
-          <img src="img/holograma-sipf.png" alt="SIPF" />
-          <img src="img/holograma-mvgc9.png" alt="MVGC-9" />
-          <img src="img/holograma-rnp-viracopos.png" alt="RNP Viracopos" />
-          <img src="img/holograma-evg.png" alt="EVG" />
+        <div class="section-label reveal">Ecossistema estratégico</div>
+        <h2 class="section-title reveal">Arquitetura holográfica do sistema Viracopos Global</h2>
+        <p class="section-text reveal">
+          A base institucional se desdobra em plataformas e núcleos com identidade própria,
+          linguagem visual integrada e leitura estratégica coerente.
+        </p>
+
+        <div class="gallery">
+          <figure class="reveal">
+            <img src="img/holograma-ecossistema-viracopos-global.png" alt="Ecossistema Viracopos Global">
+            <figcaption>Ecossistema Viracopos Global • visão central do sistema e suas integrações.</figcaption>
+          </figure>
+
+          <figure class="reveal">
+            <img src="img/holograma-sipf.png" alt="SIPF">
+            <figcaption>SIPF • inteligência financeira, leitura técnica e arquitetura estratégica.</figcaption>
+          </figure>
+
+          <figure class="reveal">
+            <img src="img/holograma-mvgc9.png" alt="MVGC-9">
+            <figcaption>MVGC-9 • governança territorial, articulação institucional e leitura estratégica.</figcaption>
+          </figure>
+
+          <figure class="reveal">
+            <img src="img/holograma-rnp-viracopos.png" alt="RNP Viracopos">
+            <figcaption>RNP Viracopos • base territorial, patrimônio ambiental e ecoturismo.</figcaption>
+          </figure>
+
+          <figure class="reveal">
+            <img src="img/holograma-evg.png" alt="EVG">
+            <figcaption>EVG • visão geral do ecossistema, fluxos, integrações e expansão.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-label reveal">Presença digital, inteligência aplicada e execução institucional</div>
+        <h2 class="section-title reveal">O site pode funcionar como centro nervoso de imagem, narrativa, relacionamento, diagnóstico e articulação executiva.</h2>
+        <p class="section-text reveal">
+          Plataforma concebida para leitura de palco principal, presença digital elevada,
+          conexão entre experiência, curadoria, inovação aplicada e visão institucional.
+        </p>
+
+        <div class="cards">
+          <div class="card reveal">
+            <h3>📌 Núcleo de Inovação & IA Generativa</h3>
+            <p>Ativação conectando estrutura, autoridade, curadoria e inteligência aplicada ao negócio.</p>
+          </div>
+
+          <div class="card reveal">
+            <h3>🌐 Plataforma Viracopos Global</h3>
+            <p>Base mestra com leitura de ecossistema para apresentar frentes SIPF, MVGC-9, RNP Viracopos, VGEO, Décio Coelho e demais ambientes estratégicos.</p>
+          </div>
+
+          <div class="card reveal">
+            <h3>🧭 Pilar do WhatsApp</h3>
+            <p>Canal institucional direto para diagnóstico, briefing, proposta e conversão executiva inicial.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="section-label reveal">Próximo passo recomendado</div>
+        <h2 class="section-title reveal">Agendar uma conversa executiva inicial</h2>
+        <p class="section-text reveal">
+          Um contato inicial permite alinhar contexto, prioridade, demanda, escopo,
+          formato de atuação e proposta institucional personalizada.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-box reveal">
+            <div class="hero-actions" style="margin-bottom:16px;">
+              <a class="btn btn-gold" href="https://wa.me/5565984091524" target="_blank">Agendar conversa</a>
+              <a class="btn btn-dark" href="mailto:antoniodecioferreiracoelho@gmail.com">Enviar e-mail</a>
+            </div>
+
+            <div class="contact-line">
+              <strong>Localização</strong>
+              <span>Vila Bela da Santíssima Trindade – MT, Brasil</span>
+            </div>
+
+            <div class="contact-line">
+              <strong>E-mail profissional</strong>
+              <span>antoniodecioferreiracoelho@gmail.com</span>
+            </div>
+
+            <div class="contact-line">
+              <strong>WhatsApp direto</strong>
+              <span>+55 65 98409-1524</span>
+            </div>
+          </div>
+
+          <div class="contact-box reveal">
+            <h3>Base institucional ativa</h3>
+            <p style="color:var(--muted); font-size:18px;">
+              Canal estruturado para apresentação executiva, integração de frentes,
+              expansão do ecossistema e fortalecimento da presença digital.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -218,5 +621,21 @@
       Décio Coelho • Viracopos Global • Centro de Inteligência Profissional Digital
     </div>
   </footer>
+
+  <a class="float-wa" href="https://wa.me/5565984091524" target="_blank">💬 WhatsApp</a>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach((el)=>observer.observe(el));
+  </script>
 </body>
 </html>
