@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://www.viracoposglobal.com.br/sitemap.xml
